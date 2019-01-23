@@ -1,0 +1,28 @@
+.Heading
+  font-family: $font--ubuntu
+  font-size: 36px
+  margin: 20px 0 40px
+
+.Projects
+  margin-top: 40px
+  list-style: none
+
+  li
+    &::before
+      content: '* '
+    a
+      text-decoration: none !important
+
+    & + li
+      margin-top: 20px
+
+  .ProjectName
+    color: $color--white
+    display: inline-block
+
+  .ProjectDesc
+    color: $color--grey
+    padding-left: 17px
+
+.Back
+  color: $color--white

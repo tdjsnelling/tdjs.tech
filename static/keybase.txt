@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/tdjsnelling
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://tdjs.tech
+  * I am tdjsnelling (https://keybase.io/tdjsnelling) on keybase.
+  * I have a public key with fingerprint CCF8 15AD EE88 F15D F457  FCF6 4623 781B B455 2C25
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010148a73b890d0f0de7111e9bc2f92a5f92eab5a7fa370f64d77b3b9bd733b6a16b0a",
+            "fingerprint": "ccf815adee88f15df457fcf64623781bb4552c25",
+            "host": "keybase.io",
+            "key_id": "4623781bb4552c25",
+            "kid": "010148a73b890d0f0de7111e9bc2f92a5f92eab5a7fa370f64d77b3b9bd733b6a16b0a",
+            "uid": "740c5bbd18739b9db77e899f9b173419",
+            "username": "tdjsnelling"
+        },
+        "service": {
+            "hostname": "tdjs.tech",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1480004410,
+    "expire_in": 157680000,
+    "prev": "22b81ef703ee820d3ab82d674a527db5e5483804dbf26142caaf14c83959eee2",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMIlAnicrVJbSBVBGD5WJp5uZhREFDkVQp5sZi9nds9baRZSL5Uh3baZnVndPJ2z
+nd1jmqlUEiXdrKiHoNtLERSV4kNJaWRkgtHtIelCFy+ZBFFQFkazUtBDj73Mz/z/
+933zfT9zZ8LoQDClYE7FjKai0LyUzrYTyUAxnhKpAjTOKoGoZXyk8CjjrmeU2QxE
+AEQQKRrBMtV0yKAFGccIIa5TU7J0iaji4ISqBFtExtAKKwxjKlOdMizLNExQmEIC
+QsCyYyU84STsmCdkTdPSkEoY55pmIZVZiootU7DDkow1RKmiqpIpqYJYGnd9hjBH
+ictz7bjoiYsxYu8f+P/sOzkihxVoqpQypGFZpzqjGHNN1y2dIiwrSPeBLk/EyBYu
+0B7b7MZ4NCoig+oQEINy2+T+bv0wf4FyPW6WCq6TiHtxMx4V7VLPc9yIT/MqHR+3
+jVPjt4JB7RjzRUOgnCdcOx4DESSQpmf7kiIwhFBREAwBXuHYCW7YPkLFYX8A/Xd4
+uZCUJKohbmEoi/1LkMmEahILY4WoEmZU5aqiyRpUGLWkMFIkkxALKaYm66rOOZeA
+n2lrLA4iirBJSoSka5fEiJdMcFB9u3X9mEBKMDA2dZT/vwLB9Iw/vy7/dNpP9LXk
+1rNXJyc9OVr4ITO9re5ca2D3+7zM/cb3sHG7pdB1nlQt0Tt6Goevrzs/N3Vad/6j
+5uDwxPb+ebNrhr7g1qlzW0sDg9nTc69tGNj24vhO0tvQMflHFvg0ePrNsgfg7o2K
+LU3VjVdTNxl9tc/k4rWvtx+5CapmOgvH7UCLHncU1XRmp9w709L1dvH4+W2znLcP
+nftDL/tHf8o9WtluRlek3Zlas6AhdHCWvvLp2StLC3IOTc9Ly8kO1c4ZONb1Yk3z
+8d7Vq43DSSlYfWF5+uetlw/UP+9fntyz8dVec8EqnrGvLFnf3vMN/ey7dLGJwO6P
+FWe+dGeeQsqu88/lu3Vvst5d/AWCnz/s
+=XbKz
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tdjsnelling
+
+==================================================================

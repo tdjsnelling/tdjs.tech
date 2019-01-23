@@ -1,0 +1,51 @@
+{
+  "name": "tdjs.tech",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "gatsby develop",
+    "qa": "npm-run-all --parallel qa:*",
+    "qa:lint": "eslint --cache --ext '.js,.jsx' -f unix .",
+    "qa:stylint": "stylint .",
+    "build": "gatsby build",
+    "now-build": "npm run build"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "gatsby": "^2.0.91",
+    "gatsby-plugin-google-analytics": "^2.0.9",
+    "gatsby-plugin-manifest": "^2.0.9",
+    "gatsby-plugin-offline": "^2.0.16",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-source-filesystem": "^2.0.16",
+    "gatsby-transformer-remark": "^2.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "react-router": "^4.3.1",
+    "universal-style-loader": "^0.16.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.5",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-jsx": "^6.0.2",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-standard": "^4.0.0",
+    "imports-loader": "^0.8.0",
+    "npm-run-all": "^4.1.5",
+    "poststylus": "^1.0.0",
+    "react-router-dom": "^4.3.1",
+    "responsive-grid": "^1.1.0",
+    "stylint": "^1.5.9",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "stylus-mixins": "^0.4.0"
+  }
+}
