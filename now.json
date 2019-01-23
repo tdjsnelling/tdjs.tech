@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "tdjs.tech",
+  "alias": "tdjs.tech",
   "builds": [
     {
       "src": "package.json",
