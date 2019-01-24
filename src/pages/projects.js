@@ -18,7 +18,7 @@ class ProjectsPage extends React.PureComponent {
           <ul className={styles.Projects}>
             {projects.map((project, i) => (
               <li key={i}>
-                <Link to={project.node.fields.slug}>
+                <Link to={project.node.fields.slug} className={styles.ProjectLink}>
                   <p className={styles.ProjectName}>{project.node.frontmatter.title}</p>
                   <p className={styles.ProjectDesc}>{project.node.frontmatter.summary}</p>
                 </Link>

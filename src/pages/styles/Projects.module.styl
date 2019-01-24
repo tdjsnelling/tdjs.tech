@@ -19,6 +19,9 @@
   .ProjectName
     color: $color--white
     display: inline-block
+    background-size: 200% 200%
+    background-image: linear-gradient(to top, $color--white 50%, transparent 50%)
+    transition: 100ms ease-in-out
 
   .ProjectDesc
     color: $color--grey
@@ -26,3 +29,10 @@
 
 .Back
   color: $color--white
+
+.ProjectLink
+  &:hover
+    .ProjectName
+      background-image: linear-gradient(to top, $color--white 51%, transparent 50%)
+      background-position: 0 100%
+      color: $color--black
