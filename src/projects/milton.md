@@ -1,7 +1,7 @@
 ---
 title: "milton"
 summary: "p2p, end-to-end encrypted messaging"
-link: "https://tdjs.tech/milton"
+link: "https://curiosity.tdjs.tech/milton"
 ---
 
 Peer-to-peer: milton doesn't use any centralised servers. the system is entirely distributed, making it impossible to shut down. everything is stored locally, where it is under your control.
