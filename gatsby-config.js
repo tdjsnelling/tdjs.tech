@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Magnetic Campaign Site`
+    title: `Magnetic Campaign Site`,
+    siteUrl: `https://tdjs.tech`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,7 +27,8 @@ module.exports = {
         trackingID: 'UA-87488863-1',
         respectDNT: true
       }
-    }
+    },
+    `gatsby-plugin-sitemap`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
