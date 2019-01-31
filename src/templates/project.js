@@ -16,6 +16,8 @@ class ProjectTemplate extends React.PureComponent {
         <Helmet>
           <title>{`${project.frontmatter.title} — Projects — Tom Snelling`}</title>
           <meta property="og:title" content={`${project.frontmatter.title} — Projects — Tom Snelling`} />
+          <meta name="description" content={project.frontmatter.summary} />
+          <meta property="og:description" content={project.frontmatter.summary} />
         </Helmet>
         <Content>
           <Link to="/projects" className={styles.Back}>&larr; back</Link>
