@@ -8,8 +8,8 @@ import Perlin from '../components/Perlin'
 
 import styles from './styles/Index.module.styl'
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
     <Content>
       <div className={styles.NoiseField}>
         <Perlin />
