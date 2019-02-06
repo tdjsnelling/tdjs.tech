@@ -1,5 +1,6 @@
 const createStylusLoader = require('./config/stylus-loader')
 const { createFilePath } = require('gatsby-source-filesystem')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 /**
@@ -15,13 +16,16 @@ exports.onCreateWebpackConfig = ({
   plugins,
   actions
 }) => {
+  const isProd = !stage.includes(`develop`)
+  const isSSR = stage.includes(`html`)
+
   actions.setWebpackConfig({
     module: {
       rules: [
         {
           test: /\.styl$/,
           use: [
-            require.resolve('universal-style-loader'),
+            (isProd && !isSSR) ? MiniCssExtractPlugin.loader : require.resolve('universal-style-loader'),
             ...createStylusLoader()
           ]
         }
