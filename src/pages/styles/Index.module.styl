@@ -24,6 +24,17 @@
     &::before
       content: '* '
 
+    a
+      text-decoration: none
+      background-size: 200% 200%
+      background-image: linear-gradient(to top, $color--white 50%, transparent 50%)
+      transition: 100ms ease-in-out
+
+      &:hover
+        background-position: 0 100%
+        background-image: linear-gradient(to top, $color--white 51%, transparent 50%)
+        color: $color--black
+
   a
     color: $color--white
 
