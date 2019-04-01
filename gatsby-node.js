@@ -14,7 +14,7 @@ exports.onCreateWebpackConfig = ({
   rules,
   loaders,
   plugins,
-  actions
+  actions,
 }) => {
   const isProd = !stage.includes(`develop`)
   const isSSR = stage.includes(`html`)
@@ -25,23 +25,25 @@ exports.onCreateWebpackConfig = ({
         {
           test: /\.styl$/,
           use: [
-            (isProd && !isSSR) ? MiniCssExtractPlugin.loader : require.resolve('universal-style-loader'),
-            ...createStylusLoader()
-          ]
-        }
-      ]
-    }
+            isProd && !isSSR
+              ? MiniCssExtractPlugin.loader
+              : require.resolve('universal-style-loader'),
+            ...createStylusLoader(),
+          ],
+        },
+      ],
+    },
   })
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode, basePath: 'projects' })
+    const slug = createFilePath({ node, getNode, basePath: 'content' })
     createNodeField({
       node,
       name: 'slug',
-      value: `/project${slug}`
+      value: slug,
     })
   }
 }
@@ -64,10 +66,10 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve('./src/templates/project.js'),
+        component: path.resolve('./src/templates/content-page.js'),
         context: {
-          slug: node.fields.slug
-        }
+          slug: node.fields.slug,
+        },
       })
     })
   })

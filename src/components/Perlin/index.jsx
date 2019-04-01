@@ -3,19 +3,19 @@ import React from 'react'
 import sketch from './sketch'
 
 class Perlin extends React.PureComponent {
-  constructor () {
+  constructor() {
     super()
     this.loadP5 = this.loadP5.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.loadP5()
     setTimeout(() => {
       this.perlin.draw = null
     }, 10000)
   }
 
-  loadP5 () {
+  loadP5() {
     try {
       this.perlin = new window.p5(sketch, 'p5_perlin')
     } catch (e) {
@@ -25,10 +25,8 @@ class Perlin extends React.PureComponent {
     }
   }
 
-  render () {
-    return (
-      <div id="p5_perlin" />
-    )
+  render() {
+    return <div id="p5_perlin" />
   }
 }
 

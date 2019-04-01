@@ -4,22 +4,14 @@
   "rules": {
     "jsx-quotes": [2, "prefer-double"],
     "object-curly-spacing": [ "error", "always" ],
-    "array-bracket-spacing": [ "error", "always" ]
+    "array-bracket-spacing": [ "error", "always" ],
+    "space-before-function-paren": 0,
+    "react/prop-types": 0,
+    "react/display-name": 0
   },
   "env": {
     "es6": true,
     "node": true,
-    "mocha": true,
-    "jquery": true,
     "browser": true
-  },
-  "globals": {
-    "Backbone": true,
-    "API_URL": true,
-    "SITE_URL": true,
-    "REALTIME_URL": true,
-    "Power2": true,
-    "importScripts": true,
-    "workbox": true
   }
 }

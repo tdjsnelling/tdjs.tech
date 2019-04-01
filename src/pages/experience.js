@@ -6,30 +6,26 @@ import Content from '../components/Content'
 
 import styles from './styles/Projects.module.styl'
 
-class ProjectsPage extends React.PureComponent {
+class ExperiencePage extends React.PureComponent {
   render() {
     const { data, location } = this.props
     const projects = data.allMarkdownRemark.edges.filter(x =>
-      x.node.fields.slug.includes('/projects/')
+      x.node.fields.slug.includes('/experience/')
     )
     return (
       <Layout location={location}>
         <Helmet>
-          <title>Projects — Tom Snelling</title>
-          <meta property="og:title" content="Projects — Tom Snelling" />
+          <title>Experience — Tom Snelling</title>
+          <meta property="og:title" content="Experience — Tom Snelling" />
         </Helmet>
         <Content>
           <Link to="/" className={styles.Back}>
             &larr; back
           </Link>
-          <h1 className={styles.Heading}>projects</h1>
+          <h1 className={styles.Heading}>experience</h1>
           <p>
-            Listed below are some personal projects. Most (if not all) projects
-            posted here will be OSS,{' '}
-            <a href="https://github.com/tdjsnelling/tdjs.tech" target="_blank">
-              this site
-            </a>{' '}
-            included.
+            Listed below are some examples of professional experience. These
+            could be employment, side businesses or freelance projects.
           </p>
           <ul className={styles.Projects}>
             {projects.map((project, i) => (
@@ -72,4 +68,4 @@ export const query = graphql`
   }
 `
 
-export default ProjectsPage
+export default ExperiencePage

@@ -5,7 +5,7 @@ export default p => {
   let n = 50
   let particles = []
 
-  p.setup = function () {
+  p.setup = function() {
     p.createCanvas(w, h)
     p.background('#000')
     p.stroke(0, 10)
@@ -14,7 +14,7 @@ export default p => {
       particles.push({
         pos: p.createVector(p.random(w), p.random(h)),
         vel: p.createVector(p.random(w), p.random(h)),
-        seed: i
+        seed: i,
       })
     }
   }
@@ -30,21 +30,28 @@ export default p => {
 
 const display = (p, pos, vel) => {
   p.stroke(255, 255, 255, 10)
-  p.line(pos.x, pos.y, (pos.x + vel.x), (pos.y + vel.y))
+  p.line(pos.x, pos.y, pos.x + vel.x, pos.y + vel.y)
 }
 
 const update = (p, t, pos, vel, seed) => {
   const w = 332
   const h = 332
 
-  pos.x = mod((pos.x + vel.x), w)
-  pos.y = mod((pos.y + vel.y), h)
+  pos.x = mod(pos.x + vel.x, w)
+  pos.y = mod(pos.y + vel.y, h)
 
   var r = window.p5.Vector.fromAngle(p.noise(seed, t) * p.TWO_PI)
   vel.x = r.x
   vel.y = r.y
 
-  vel.add(flow(p, pos)).mult(3)
+  vel
+    .add(
+      flow(
+        p,
+        pos
+      )
+    )
+    .mult(3)
 }
 
 const flow = (p, pos) => {
