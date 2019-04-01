@@ -23,7 +23,7 @@ class ExperiencePage extends React.PureComponent {
             &larr; back
           </Link>
           <h1 className={styles.Heading}>experience</h1>
-          <p>
+          <p className={styles.Blurb}>
             Listed below are some examples of professional experience. These
             could be employment, side businesses or freelance projects.
           </p>

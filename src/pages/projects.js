@@ -23,7 +23,7 @@ class ProjectsPage extends React.PureComponent {
             &larr; back
           </Link>
           <h1 className={styles.Heading}>projects</h1>
-          <p>
+          <p className={styles.Blurb}>
             Listed below are some personal projects. Most (if not all) projects
             posted here will be OSS,{' '}
             <a href="https://github.com/tdjsnelling/tdjs.tech" target="_blank">
