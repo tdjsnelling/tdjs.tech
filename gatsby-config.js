@@ -20,7 +20,6 @@ module.exports = {
         path: `${__dirname}/src/content/`,
       },
     },
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -29,6 +28,23 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+    `gatsby-remark-copy-linked-files`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1400,
+              linkImagesToOriginal: true,
+            },
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
