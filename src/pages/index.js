@@ -46,7 +46,15 @@ const IndexPage = ({ location }) => (
         .
       </p>
       <p className={styles.Footer}>
-        &copy; {new Date().getFullYear()} &bull; <a href="/keybase.txt">pgp</a>
+        &copy; {new Date().getFullYear()}
+        &nbsp;/&nbsp;
+        <a href="/keybase.txt" target="_blank">
+          proof
+        </a>
+        &nbsp;/&nbsp;
+        <a href="//curiosity.tdjs.tech/key.asc.txt" target="_blank">
+          pgp
+        </a>
       </p>
     </Content>
   </Layout>
