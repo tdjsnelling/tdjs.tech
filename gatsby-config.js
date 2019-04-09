@@ -40,6 +40,14 @@ module.exports = {
             options: {
               maxWidth: 1400,
               linkImagesToOriginal: true,
+              backgroundColor: 'black',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow',
             },
           },
         ],

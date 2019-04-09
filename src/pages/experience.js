@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
-import styles from './styles/Projects.module.styl'
+import styles from './styles/ListPage.module.styl'
 
 class ExperiencePage extends React.PureComponent {
   render() {
@@ -27,17 +27,14 @@ class ExperiencePage extends React.PureComponent {
             Listed below are some examples of professional experience. These
             could be employment, side businesses or freelance projects.
           </p>
-          <ul className={styles.Projects}>
+          <ul className={styles.List}>
             {projects.map((project, i) => (
               <li key={i}>
-                <Link
-                  to={project.node.fields.slug}
-                  className={styles.ProjectLink}
-                >
-                  <p className={styles.ProjectName}>
+                <Link to={project.node.fields.slug} className={styles.ItemLink}>
+                  <p className={styles.ItemName}>
                     {project.node.frontmatter.title}
                   </p>
-                  <p className={styles.ProjectDesc}>
+                  <p className={styles.ItemDesc}>
                     {project.node.frontmatter.summary}
                   </p>
                 </Link>

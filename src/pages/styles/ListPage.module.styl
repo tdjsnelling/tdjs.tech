@@ -6,7 +6,7 @@
 .Blurb
   margin-bottom: 40px
 
-.Projects
+.List
   list-style: none
 
   li
@@ -18,23 +18,23 @@
     & + li
       margin-top: 20px
 
-  .ProjectName
+  .ItemName
     color: $color--white
     display: inline-block
     background-size: 200% 200%
     background-image: linear-gradient(to top, $color--white 50%, transparent 50%)
     transition: 100ms ease-in-out
 
-  .ProjectDesc
+  .ItemDesc
     color: $color--grey
     padding-left: 17px
 
 .Back
   color: $color--white
 
-.ProjectLink
+.ItemLink
   &:hover
-    .ProjectName
+    .ItemName
       background-image: linear-gradient(to top, $color--white 51%, transparent 50%)
       background-position: 0 100%
       color: $color--black

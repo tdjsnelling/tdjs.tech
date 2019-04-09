@@ -9,30 +9,26 @@ import styles from './styles/ListPage.module.styl'
 class ProjectsPage extends React.PureComponent {
   render() {
     const { data, location } = this.props
-    const projects = data.allMarkdownRemark.edges.filter(x =>
-      x.node.fields.slug.includes('/projects/')
+    const work = data.allMarkdownRemark.edges.filter(x =>
+      x.node.fields.slug.includes('/work/')
     )
     return (
       <Layout location={location}>
         <Helmet>
-          <title>Projects — Tom Snelling</title>
-          <meta property="og:title" content="Projects — Tom Snelling" />
+          <title>Work — Tom Snelling</title>
+          <meta property="og:title" content="Work — Tom Snelling" />
         </Helmet>
         <Content>
           <Link to="/" className={styles.Back}>
             &larr; back
           </Link>
-          <h1 className={styles.Heading}>projects</h1>
+          <h1 className={styles.Heading}>work</h1>
           <p className={styles.Blurb}>
-            Listed below are some personal projects. Most (if not all) projects
-            posted here will be OSS,{' '}
-            <a href="https://github.com/tdjsnelling/tdjs.tech" target="_blank">
-              this site
-            </a>{' '}
-            included.
+            Some examples of professional work I have completed. All projects
+            are posted with permission of the client or employer.
           </p>
           <ul className={styles.List}>
-            {projects.map((project, i) => (
+            {work.map((project, i) => (
               <li key={i}>
                 <Link to={project.node.fields.slug} className={styles.ItemLink}>
                   <p className={styles.ItemName}>
