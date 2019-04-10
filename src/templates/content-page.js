@@ -28,7 +28,7 @@ class ContentPage extends React.PureComponent {
         </Helmet>
         <Content>
           <Link to={`/${type.split('/')[1]}`} className={styles.Back}>
-            &larr; back
+            &larr; all {type.split('/')[1]}
           </Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
           <p className={styles.Summary}>{content.frontmatter.summary}</p>

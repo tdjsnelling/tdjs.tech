@@ -20,9 +20,9 @@ class ProjectsPage extends React.PureComponent {
         </Helmet>
         <Content>
           <Link to="/" className={styles.Back}>
-            &larr; back
+            &larr; home
           </Link>
-          <h1 className={styles.Heading}>projects</h1>
+          <h1 className={styles.Heading}>Projects</h1>
           <p className={styles.Blurb}>
             Listed below are some personal projects. Most (if not all) projects
             posted here will be OSS,{' '}

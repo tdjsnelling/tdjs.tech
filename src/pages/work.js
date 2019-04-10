@@ -20,9 +20,9 @@ class ProjectsPage extends React.PureComponent {
         </Helmet>
         <Content>
           <Link to="/" className={styles.Back}>
-            &larr; back
+            &larr; home
           </Link>
-          <h1 className={styles.Heading}>work</h1>
+          <h1 className={styles.Heading}>Work</h1>
           <p className={styles.Blurb}>
             Some examples of professional work I have completed. All projects
             are posted with permission of the client or employer.

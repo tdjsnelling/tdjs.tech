@@ -14,7 +14,7 @@ const IndexPage = ({ location }) => (
         src="https://pbs.twimg.com/profile_images/875435865534869504/73SZbGR5_400x400.jpg"
         alt="profile photo"
       />
-      <h1 className={styles.Heading}>tom snelling</h1>
+      <h1 className={styles.Heading}>Tom Snelling</h1>
       <p>I am a full-stack web developer from the UK.</p>
       <p>
         I currently work as a placement front-end developer for Clock, and study
