@@ -25,6 +25,9 @@ const IndexPage = ({ location }) => (
           <Link to="/experience">experience</Link>
         </li>
         <li>
+          <Link to="/work">work</Link>
+        </li>
+        <li>
           <Link to="/projects">projects</Link>
         </li>
         <li>
