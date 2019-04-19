@@ -12,6 +12,6 @@ One of first bots to feature profiles - allowing users to store any number of pa
 
 It was also the first bot (as far as I'm aware) to be able to run multiple order tasks _in parallel_, without just using requests - resulting a very high order success rate. Each task is launched in it's own independent browser session and commands are dispatched from the main process to each browser instance, fulfilling the tasks.
 
-It also supports Google login to minimise the probability of having to complete a reCAPCTHA. Once logged in, your Google session cookies are injected into each browser instance at checkout time.
+It also supports Google login to minimise the probability of having to complete a reCAPTCHA. Once logged in, your Google session cookies are injected into each browser instance at checkout time.
 
 Now that Check Me Out is no longer operational as a company, the Desktop bot is 100% free and open source under the GNU GPLv3 license.
