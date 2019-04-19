@@ -10,7 +10,7 @@ It is built with technology from the [dat project](https://datproject.org), a pe
 
 When browsing sks keyservers I noticed that most were very slow to search and fetch keys, and some just did not work at all... _cough_ MIT _cough_. This inspired me to try and build a new solution, something that used some new and exciting technology. I had experimented with some components of the dat ecosystem before, and saw hyperdb in particular as a perfect fit for this project.
 
-I have a node running [here](http://curiosity.tdjs.tech:4000), try searching 'tom' to find my public key.
+I have a node running [here](https://keys.tdjs.tech), try searching 'tom' to find my public key.
 
 If you want to run a node, follow the instructions in the README, linked below. Feel free to start your own pool or join mine with the key:
 
