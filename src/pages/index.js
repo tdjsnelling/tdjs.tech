@@ -55,7 +55,7 @@ const IndexPage = ({ location }) => (
           proof
         </a>
         &nbsp;/&nbsp;
-        <a href="//curiosity.tdjs.tech/key.asc.txt" target="_blank">
+        <a href="/key.asc.txt" target="_blank">
           pgp
         </a>
       </p>
