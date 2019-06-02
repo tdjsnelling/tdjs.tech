@@ -1,13 +1,13 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import './Layout.styl'
+import styles from './Layout.styl'
 
 class Layout extends React.Component {
   render() {
     const { children, location } = this.props
     return (
-      <React.Fragment>
+      <div className={styles.Layout}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>Tom Snelling</title>
@@ -34,7 +34,7 @@ class Layout extends React.Component {
           />
         </Helmet>
         {children}
-      </React.Fragment>
+      </div>
     )
   }
 }
