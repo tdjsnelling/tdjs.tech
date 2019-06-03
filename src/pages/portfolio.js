@@ -9,26 +9,26 @@ import styles from './styles/ListPage.module.styl'
 class ProjectsPage extends React.PureComponent {
   render() {
     const { data, location } = this.props
-    const work = data.allMarkdownRemark.edges.filter(x =>
-      x.node.fields.slug.includes('/work/')
+    const portfolio = data.allMarkdownRemark.edges.filter(x =>
+      x.node.fields.slug.includes('/portfolio/')
     )
     return (
       <Layout location={location}>
         <Helmet>
-          <title>Work — Tom Snelling</title>
+          <title>Portfolio — Tom Snelling</title>
           <meta property="og:title" content="Work — Tom Snelling" />
         </Helmet>
         <Content>
           <Link to="/" className={styles.Back}>
             &larr; home
           </Link>
-          <h1 className={styles.Heading}>Work</h1>
+          <h1 className={styles.Heading}>Portfolio</h1>
           <p className={styles.Blurb}>
             Some examples of professional work I have completed. All projects
             are posted with permission of the client or employer.
           </p>
           <ul className={styles.List}>
-            {work.map((project, i) => (
+            {portfolio.map((project, i) => (
               <li key={i}>
                 <Link to={project.node.fields.slug} className={styles.ItemLink}>
                   <p className={styles.ItemName}>
