@@ -7,6 +7,10 @@
   font-size: 36px
   margin-bottom: 40px
 
+.Hi
+  &:hover
+    animation: rainbow 500ms linear infinite
+
 .Links
   margin: 20px 0
   list-style: none
@@ -29,3 +33,8 @@
 
   a
     color: $color--grey !important
+
+@keyframes rainbow
+  for i in (1..36)
+    {100% * (i/36)}
+      color: hsl(i*10, 60%, 70%)

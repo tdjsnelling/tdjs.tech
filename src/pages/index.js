@@ -16,9 +16,10 @@ const IndexPage = ({ location }) => (
       />
       <h1 className={styles.Heading}>Tom Snelling</h1>
       <p>
-        <strong>Hi there!</strong> I'm Tom, and I am a full-stack web developer
-        from the UK. I am a lover of JavaScript, advocate of digital privacy and
-        free speech, and a passionate entrepreneur.
+        <strong className={styles.Hi}>Hi there!</strong> I'm Tom, and I am a
+        full-stack web developer from the UK. I am a lover of JavaScript,
+        advocate of digital privacy and free speech, and a passionate
+        entrepreneur.
       </p>
       <p>
         I am currently on a year in industry working as a front-end developer{' '}
