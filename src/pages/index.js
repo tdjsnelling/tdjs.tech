@@ -46,7 +46,7 @@ const IndexPage = ({ location }) => (
         </li>
       </ul>
       <p>
-        Want to work together? Please contact me on{' '}
+        Want to work together? I'd love to! Please contact me on{' '}
         <OutboundLink href="https://twitter.com/tdjsnelling" target="_blank">
           Twitter
         </OutboundLink>{' '}
