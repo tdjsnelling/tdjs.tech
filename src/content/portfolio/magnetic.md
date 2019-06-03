@@ -4,7 +4,7 @@ summary: 'Discover why attention matters and the role magazines play in the mode
 link: 'https://payattention.media'
 ---
 
-Magnetic Media came to us for an informative eye-catching microsite for their latest campaign, 'Pay Attention'. The main driving force behind the campaign was a desire to not only address but disprove the common perception in media today that magazines are an ineffective form of marketing and therefore unworthy of investment.
+Magnetic Media came to us for an informative and eye-catching microsite for their latest campaign, 'Pay Attention'. The main driving force behind the campaign was a desire to not only address but disprove the common perception in media today that magazines are an ineffective form of marketing and therefore unworthy of investment.
 
 I was the sole developer on the Pay Attention site, so I worked closely with the lead designer on this project to achieve the outcome that the client desired.
 

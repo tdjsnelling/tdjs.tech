@@ -8,8 +8,7 @@ As my first major project at [Clock](https://clock.co.uk), I was part of the tea
 
 ![Contagious designs](./contagious1.png)
 
-I played key part in a small team of front-end developers working on the site, so was 'thrown into the deep end' as such, this being my first real client project. I certainly learned a lot - this was the first project on which I used [Storybook](https://storybook.js.org) to prototype React components in isolation, a practise that I now use on all projects I undertake.
-
+I played key part in a small team of front-end developers working on the site, so was 'thrown into the deep end' as such, this being my first real client project. I certainly learned a lot - this was the first project on which I used [Storybook](https://storybook.js.org) to prototype React components in isolation, a practise that I now use on all projects I undertake. It's also the first project on which I used [prettier](https://prettier.io/), a tool I now cannot live without!
 
 ![Contagious designs](./contagious2.png)
 
