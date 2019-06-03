@@ -14,6 +14,6 @@ After a little over 2 years, we have decided to call time on Check Me Out. Build
 
 The streetwear space has become _incredibly_ over-saturated in the last 2 years, with a new bot, tool, or monitor of some kind being released every week. We don't believe we can keep up with the trends and demands alongside full-time study, so instead of continuing to sell a potentially inferior tool, we will discontinue trading.
 
-All Check Me Out software is now open source, and available from my [github](https://github.com/tdjsnelling).
+All Check Me Out software is now open source, and available from my [GitHub](https://github.com/tdjsnelling).
 
 Now, on to bigger and better things.

@@ -16,15 +16,17 @@ const IndexPage = ({ location }) => (
       />
       <h1 className={styles.Heading}>Tom Snelling</h1>
       <p>
-        <strong>Hi there!</strong>{' '}
-        I'm Tom, and I am a full-stack web developer from the UK. I am a{' '}
-        lover of JavaScript, advocate of digital privacy and free speech,{' '}
-        and a passionate entrepreneur.
+        <strong>Hi there!</strong> I'm Tom, and I am a full-stack web developer
+        from the UK. I am a lover of JavaScript, advocate of digital privacy and
+        free speech, and a passionate entrepreneur.
       </p>
       <p>
         I am currently on a year in industry working as a front-end developer{' '}
-        for <a href="https://clock.co.uk" target="_blank">Clock</a>, and study{' '}
-        computer science at Loughborough University.
+        for{' '}
+        <a href="https://clock.co.uk" target="_blank">
+          Clock
+        </a>
+        , and study computer science at Loughborough University.
       </p>
       <ul className={styles.Links}>
         <li>
@@ -38,11 +40,12 @@ const IndexPage = ({ location }) => (
         </li>
         <li>
           <OutboundLink href="https://github.com/tdjsnelling" target="_blank">
-            Github
+            GitHub
           </OutboundLink>
         </li>
       </ul>
-      <p>Want to work together? Please contact me on{' '}
+      <p>
+        Want to work together? Please contact me on{' '}
         <OutboundLink href="https://twitter.com/tdjsnelling" target="_blank">
           Twitter
         </OutboundLink>{' '}
