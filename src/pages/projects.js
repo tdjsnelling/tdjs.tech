@@ -26,7 +26,11 @@ class ProjectsPage extends React.PureComponent {
           <p className={styles.Blurb}>
             Listed below are some personal projects. Most (if not all) projects
             posted here will be OSS,{' '}
-            <a href="https://github.com/tdjsnelling/tdjs.tech" target="_blank">
+            <a
+              href="https://github.com/tdjsnelling/tdjs.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               this site
             </a>{' '}
             included.

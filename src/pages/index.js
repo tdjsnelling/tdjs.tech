@@ -24,7 +24,7 @@ const IndexPage = ({ location }) => (
       <p>
         I am currently on a year in industry working as a front-end developer{' '}
         for{' '}
-        <a href="https://clock.co.uk" target="_blank">
+        <a href="https://clock.co.uk" target="_blank" rel="noopener noreferrer">
           Clock
         </a>
         , and study computer science at Loughborough University.
@@ -40,18 +40,30 @@ const IndexPage = ({ location }) => (
           <Link to="/projects">Projects</Link>
         </li>
         <li>
-          <OutboundLink href="https://github.com/tdjsnelling" target="_blank">
+          <OutboundLink
+            href="https://github.com/tdjsnelling"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </OutboundLink>
         </li>
       </ul>
       <p>
         Want to work together? I'd love to! Please contact me on{' '}
-        <OutboundLink href="https://twitter.com/tdjsnelling" target="_blank">
+        <OutboundLink
+          href="https://twitter.com/tdjsnelling"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Twitter
         </OutboundLink>{' '}
         or send an email to{' '}
-        <a href="mailto:tom@snelling.xyz" target="_blank">
+        <a
+          href="mailto:tom@snelling.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           tom@snelling.xyz
         </a>
         .
@@ -59,11 +71,11 @@ const IndexPage = ({ location }) => (
       <p className={styles.Footer}>
         &copy; {new Date().getFullYear()}
         &nbsp;/&nbsp;
-        <a href="/keybase.txt" target="_blank">
+        <a href="/keybase.txt" target="_blank" rel="noopener noreferrer">
           proof
         </a>
         &nbsp;/&nbsp;
-        <a href="/key.asc.txt" target="_blank">
+        <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
           pgp
         </a>
       </p>

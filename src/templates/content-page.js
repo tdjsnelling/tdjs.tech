@@ -39,6 +39,7 @@ class ContentPage extends React.PureComponent {
           <OutboundLink
             href={content.frontmatter.link}
             target="_blank"
+            rel="noopener noreferrer"
             className={styles.ContentLink}
           >
             {content.frontmatter.link} &rarr;
