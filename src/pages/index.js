@@ -4,7 +4,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
-import styles from './styles/Index.module.styl'
+import styles from './styles/Index.module.scss'
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>

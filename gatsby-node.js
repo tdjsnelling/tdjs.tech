@@ -1,6 +1,4 @@
-const createStylusLoader = require('./config/stylus-loader')
 const { createFilePath } = require('gatsby-source-filesystem')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 /**
@@ -8,33 +6,6 @@ const path = require('path')
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-
-exports.onCreateWebpackConfig = ({
-  stage,
-  rules,
-  loaders,
-  plugins,
-  actions,
-}) => {
-  const isProd = !stage.includes(`develop`)
-  const isSSR = stage.includes(`html`)
-
-  actions.setWebpackConfig({
-    module: {
-      rules: [
-        {
-          test: /\.styl$/,
-          use: [
-            isProd && !isSSR
-              ? MiniCssExtractPlugin.loader
-              : require.resolve('universal-style-loader'),
-            ...createStylusLoader(),
-          ],
-        },
-      ],
-    },
-  })
-}
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions

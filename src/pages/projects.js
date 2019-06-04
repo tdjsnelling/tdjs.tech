@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
-import styles from './styles/ListPage.module.styl'
+import styles from './styles/ListPage.module.scss'
 
 class ProjectsPage extends React.PureComponent {
   render() {

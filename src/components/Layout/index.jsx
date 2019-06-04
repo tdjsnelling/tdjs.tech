@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import styles from './Layout.styl'
+import styles from './Layout.module.scss'
 
 class Layout extends React.Component {
   render() {

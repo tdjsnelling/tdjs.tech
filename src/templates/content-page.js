@@ -5,7 +5,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
-import styles from './ContentPage.module.styl'
+import styles from './ContentPage.module.scss'
 
 class ContentPage extends React.PureComponent {
   render() {

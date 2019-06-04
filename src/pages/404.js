@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
-import styles from './styles/404.module.styl'
+import styles from './styles/404.module.scss'
 
 class NotFoundPage extends React.PureComponent {
   render() {

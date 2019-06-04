@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Magnetic Campaign Site`,
+    title: `Tom Snelling personal site`,
     siteUrl: `https://tdjs.tech`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,

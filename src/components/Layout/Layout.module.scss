@@ -1,0 +1,21 @@
+@import '../../scss/settings.scss';
+
+.Layout {
+  min-height: 100vh;
+}
+
+:global {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    color: $color--black;
+    font-family: $font--sourcecode;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}

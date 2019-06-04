@@ -1,0 +1,16 @@
+@import '../../scss/settings.scss';
+
+.Content {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  > * + * {
+    margin-top: 20px;
+  }
+
+  a {
+    color: $color--black;
+  }
+}
