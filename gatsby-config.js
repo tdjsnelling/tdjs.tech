@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingID: 'UA-87488863-1',
-        respectDNT: true,
+        trackingId: 'UA-87488863-1',
+        head: true,
       },
     },
     `gatsby-plugin-sitemap`,
