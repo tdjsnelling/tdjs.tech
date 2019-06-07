@@ -31,9 +31,6 @@ const IndexPage = ({ location }) => (
       </p>
       <ul className={styles.Links}>
         <li>
-          <Link to="/experience">Experience</Link>
-        </li>
-        <li>
           <Link to="/portfolio">Portfolio</Link>
         </li>
         <li>

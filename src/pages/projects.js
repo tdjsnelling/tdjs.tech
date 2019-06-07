@@ -25,7 +25,7 @@ class ProjectsPage extends React.PureComponent {
           <h1 className={styles.Heading}>Projects</h1>
           <p className={styles.Blurb}>
             Listed below are some personal projects. Most (if not all) projects
-            posted here will be OSS,{' '}
+            posted here will be open source software,{' '}
             <a
               href="https://github.com/tdjsnelling/tdjs.tech"
               target="_blank"
