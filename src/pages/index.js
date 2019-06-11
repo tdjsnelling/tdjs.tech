@@ -37,6 +37,9 @@ const IndexPage = ({ location }) => (
           <Link to="/projects">Projects</Link>
         </li>
         <li>
+          <Link to="/blog">Blog</Link>
+        </li>
+        <li>
           <OutboundLink
             href="https://github.com/tdjsnelling"
             target="_blank"
