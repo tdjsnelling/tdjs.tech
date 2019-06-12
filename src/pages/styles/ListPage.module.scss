@@ -16,6 +16,8 @@
   li {
     &::before {
       content: '* ';
+      position: absolute;
+      left: 0;
     }
 
     a {
@@ -35,13 +37,8 @@
     transition: 100ms ease-in-out;
   }
 
-  .ItemDate {
-    padding-left: 17px;
-  }
-
   .ItemDesc {
     color: $color--grey;
-    padding-left: 17px;
   }
 }
 
@@ -55,4 +52,9 @@
       text-decoration: underline;
     }
   }
+}
+
+.ItemWithDate {
+  display: flex;
+  justify-content: space-between;
 }

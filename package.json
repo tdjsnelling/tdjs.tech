@@ -2,7 +2,7 @@
   "name": "tdjs.tech",
   "version": "1.0.0",
   "scripts": {
-    "dev": "gatsby develop",
+    "start": "gatsby develop",
     "qa": "npm-run-all --parallel qa:*",
     "qa:lint": "eslint --cache --ext '.js,.jsx' -f unix .",
     "qa:stylint": "stylint .",

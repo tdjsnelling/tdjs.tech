@@ -27,14 +27,13 @@ class ProjectsPage extends React.PureComponent {
             {blogPosts.map((project, i) => (
               <li key={i}>
                 <Link to={project.node.fields.slug} className={styles.ItemLink}>
-                  <p className={styles.ItemName}>
-                    {project.node.frontmatter.title}
-                  </p>
-                  <p className={styles.ItemDate}>
-                    {project.node.frontmatter.date}
-                  </p>
-                  <p className={styles.ItemDesc}>
-                    {project.node.frontmatter.summary}
+                  <p className={styles.ItemWithDate}>
+                    <span className={styles.ItemName}>
+                      {project.node.frontmatter.title}
+                    </span>
+                    <span className={styles.ItemDate}>
+                      {project.node.frontmatter.date}
+                    </span>
                   </p>
                 </Link>
               </li>
