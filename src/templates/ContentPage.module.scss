@@ -1,5 +1,9 @@
 @import '../scss/settings.scss';
 
+.Date {
+  color: $color--grey;
+}
+
 .Title {
   font-size: 35px;
   color: $color--black;
@@ -37,6 +41,10 @@
     img {
       width: 100%;
     }
+  }
+
+  ul {
+    list-style-position: inside;
   }
 }
 

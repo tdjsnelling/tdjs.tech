@@ -31,19 +31,24 @@ class ContentPage extends React.PureComponent {
             &larr; all {type.split('/')[1]}
           </Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
+          {!!content.frontmatter.date && (
+            <p className={styles.Date}>{content.frontmatter.date}</p>
+          )}
           <p className={styles.Summary}>{content.frontmatter.summary}</p>
           <div
             className={styles.Body}
             dangerouslySetInnerHTML={{ __html: content.html }}
           />
-          <OutboundLink
-            href={content.frontmatter.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ContentLink}
-          >
-            {content.frontmatter.link} &rarr;
-          </OutboundLink>
+          {!!content.frontmatter.link && (
+            <OutboundLink
+              href={content.frontmatter.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ContentLink}
+            >
+              {content.frontmatter.link} &rarr;
+            </OutboundLink>
+          )}
         </Content>
       </Layout>
     )
@@ -61,6 +66,7 @@ export const query = graphql`
         title
         summary
         link
+        date
       }
     }
   }
