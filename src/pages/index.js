@@ -22,12 +22,11 @@ const IndexPage = ({ location }) => (
         entrepreneur.
       </p>
       <p>
-        I am currently on a year in industry working as a front-end developer{' '}
-        for{' '}
+        I'm currently working as a front-end developer for{' '}
         <a href="https://clock.co.uk" target="_blank" rel="noopener noreferrer">
           Clock
         </a>
-        , and study computer science at Loughborough University.
+        , and studying computer science at Loughborough University.
       </p>
       <ul className={styles.Links}>
         <li>

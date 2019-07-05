@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
+import classnames from 'classnames'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
@@ -23,7 +24,7 @@ class ProjectsPage extends React.PureComponent {
             &larr; home
           </Link>
           <h1 className={styles.Heading}>Blog</h1>
-          <ul className={styles.List}>
+          <ul className={classnames(styles.List, styles.smallGap)}>
             {blogPosts.map((project, i) => (
               <li key={i}>
                 <Link to={project.node.fields.slug} className={styles.ItemLink}>
@@ -47,7 +48,7 @@ class ProjectsPage extends React.PureComponent {
 
 export const query = graphql`
   {
-    allMarkdownRemark(sort: { fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           fields {

@@ -12,12 +12,13 @@
 
 .List {
   list-style: none;
+  padding-left: 20px;
 
   li {
     &::before {
       content: '* ';
       position: absolute;
-      left: 0;
+      left: 20px;
     }
 
     a {
@@ -29,6 +30,12 @@
     }
   }
 
+  &.smallGap {
+    li + li {
+      margin-top: 10px;
+    }
+  }
+
   .ItemName {
     color: $color--black;
     display: inline-block;
@@ -37,8 +44,13 @@
     transition: 100ms ease-in-out;
   }
 
-  .ItemDesc {
+  .ItemDesc, .ItemDate {
     color: $color--grey;
+  }
+
+  .ItemDate {
+    white-space: nowrap;
+    padding-left: 20px;
   }
 }
 
