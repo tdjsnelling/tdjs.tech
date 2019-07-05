@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { DiscussionEmbed } from 'disqus-react'
+import { DiscussionEmbed, CommentCount } from 'disqus-react'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
@@ -13,6 +13,7 @@ class ContentPage extends React.PureComponent {
     const { data, location } = this.props
     const content = data.markdownRemark
     const type = content.fields.slug
+    const isBlog = type.includes('/blog/')
     return (
       <Layout location={location}>
         <Helmet>
@@ -32,8 +33,17 @@ class ContentPage extends React.PureComponent {
             &larr; all {type.split('/')[1]}
           </Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
-          {!!content.frontmatter.date && (
-            <p className={styles.Date}>{content.frontmatter.date}</p>
+          {isBlog && (
+            <p className={styles.Date}>
+              {content.frontmatter.date} /{' '}
+              <CommentCount
+                shortname="tdjs-tech"
+                config={{
+                  url: location.href,
+                  title: content.frontmatter.title
+                }}
+              />
+            </p>
           )}
           <p className={styles.Summary}>{content.frontmatter.summary}</p>
           <div
@@ -50,7 +60,7 @@ class ContentPage extends React.PureComponent {
               {content.frontmatter.link} &rarr;
             </OutboundLink>
           )}
-          {type.includes('/blog/') && (
+          {isBlog && (
             <DiscussionEmbed
               shortname="tdjs-tech"
               config={{ url: location.href, title: content.frontmatter.title }}
