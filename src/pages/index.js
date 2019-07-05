@@ -77,6 +77,7 @@ const IndexPage = ({ location }) => (
         <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
           pgp
         </a>
+        <a rel="me" href="https://mastodon.social/@tdjsnelling" />
       </p>
     </Content>
   </Layout>
