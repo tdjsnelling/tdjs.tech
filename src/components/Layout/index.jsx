@@ -1,13 +1,20 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import classnames from 'classnames'
 
 import styles from './Layout.module.scss'
 
 class Layout extends React.Component {
   render() {
-    const { children, location } = this.props
+    const { children, location, light, transition } = this.props
     return (
-      <div className={styles.Layout}>
+      <div
+        className={classnames(
+          styles.Layout,
+          light && styles.light,
+          transition && styles.transition
+        )}
+      >
         <Helmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
           <title>Tom Snelling</title>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
@@ -24,6 +25,13 @@ class IndexPage extends React.PureComponent {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <title>Tom Snelling — Full-stack web developer</title>
+          <meta
+            property="og:title"
+            content="Tom Snelling — Full-stack web developer"
+          />
+        </Helmet>
         <Content>
           <div className={styles.Panel}>
             <h1 className={styles.Heading}>
@@ -49,31 +57,37 @@ class IndexPage extends React.PureComponent {
             </h1>
             <p className={styles.ScrollDown}>↓</p>
           </div>
-          <h2 className={styles.ListTitle}>Portfolio</h2>
+          <h2 className={styles.ListTitle} id="portfolio">
+            Portfolio
+          </h2>
           <ul className={styles.ItemLinks}>
             {portfolioItems.map((item, i) => (
               <li key={i}>
-                <Link to={item.node.fields.slug}>
+                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
                   {item.node.frontmatter.title}
                 </Link>
               </li>
             ))}
           </ul>
-          <h2 className={styles.ListTitle}>Open source</h2>
+          <h2 className={styles.ListTitle} id="projects">
+            Open source
+          </h2>
           <ul className={styles.ItemLinks}>
             {projectItems.map((item, i) => (
               <li key={i}>
-                <Link to={item.node.fields.slug}>
+                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
                   {item.node.frontmatter.title}
                 </Link>
               </li>
             ))}
           </ul>
-          <h2 className={styles.ListTitle}>Blog</h2>
+          <h2 className={styles.ListTitle} id="blog">
+            Blog
+          </h2>
           <ul className={styles.ItemLinks}>
             {blogItems.map((item, i) => (
               <li key={i}>
-                <Link to={item.node.fields.slug}>
+                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
                   {item.node.frontmatter.title}
                 </Link>
               </li>

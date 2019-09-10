@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { DiscussionEmbed, CommentCount } from 'disqus-react'
+import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
@@ -14,8 +14,9 @@ class ContentPage extends React.PureComponent {
     const content = data.markdownRemark
     const type = content.fields.slug
     const isBlog = type.includes('/blog/')
+
     return (
-      <Layout location={location}>
+      <Layout location={location} light>
         <Helmet>
           <title>{`${content.frontmatter.title} — Tom Snelling`}</title>
           <meta
@@ -28,23 +29,12 @@ class ContentPage extends React.PureComponent {
             content={content.frontmatter.summary}
           />
         </Helmet>
-        <Content>
-          <Link to={`/${type.split('/')[1]}`} className={styles.Back}>
-            &larr; all {type.split('/')[1]}
+        <Content narrow>
+          <Link to={`/`} state={{ fromContent: true }} className={styles.Back}>
+            &larr; home
           </Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
-          {isBlog && (
-            <p className={styles.Date}>
-              {content.frontmatter.date} /{' '}
-              <CommentCount
-                shortname="tdjs-tech"
-                config={{
-                  url: location.href,
-                  title: content.frontmatter.title
-                }}
-              />
-            </p>
-          )}
+          {isBlog && <p className={styles.Date}>{content.frontmatter.date}</p>}
           <p className={styles.Summary}>{content.frontmatter.summary}</p>
           <div
             className={styles.Body}

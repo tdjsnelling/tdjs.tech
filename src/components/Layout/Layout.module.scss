@@ -3,6 +3,38 @@
 .Layout {
   min-height: 100vh;
   background-color: $color--black;
+  color: $color--white;
+
+  &.transition {
+    animation: toDark 250ms forwards;
+  }
+
+  &.light {
+    background-color: $color--white--full;
+    color: $color--black;
+
+    &.transition {
+      animation: toLight 250ms forwards;
+    }
+  }
+}
+
+@keyframes toLight {
+  0% {
+    background-color: $color--black;
+  }
+  100% {
+    background-color: $color--white;
+  }
+}
+
+@keyframes toDark {
+  0% {
+    background-color: $color--white;
+  }
+  100% {
+    background-color: $color--black;
+  }
 }
 
 :global {
@@ -14,7 +46,6 @@
   }
 
   body {
-    color: $color--white;
     font-family: $font--sourcecode;
     line-height: 1.4;
   }
