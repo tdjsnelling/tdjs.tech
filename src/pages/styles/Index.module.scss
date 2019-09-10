@@ -1,33 +1,112 @@
 @import '../../scss/settings.scss';
 
-.ProfilePhoto {
-  width: 150px;
-  margin-bottom: 40px;
-  border: 4px solid $color--black;
+.Panel {
+  height: calc(100vh - 80px);
 }
 
 .Heading {
-  font-family: $font--ubuntu;
-  font-size: 36px;
-  margin-bottom: 40px;
-}
+  font-family: $font--gt;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: $spacing--large;
+  color: $color--grey;
 
-.Hi {
-  &:hover {
-    animation: rainbow 500ms linear infinite;
+  @media (min-width: $mq--tablet) {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  a {
+    color: $color--white;
+    text-decoration: none;
+  }
+
+  .Line {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: $color--black;
+      animation: revealBefore 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+      transform: translateX(0);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: $color--grey--light;
+      animation: revealAfter 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+      transform: translateX(-101%);
+    }
+
+    @for $i from 1 through 7 {
+      &:nth-of-type(#{$i}) {
+        &::before,
+        &::after {
+          animation-delay: $i * 0.4s;
+        }
+      }
+    }
+  }
+
+  .Name {
+    color: $color--white;
   }
 }
 
-.Links {
-  margin: 20px 0;
-  list-style: none;
+@keyframes revealBefore {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes revealAfter {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(101%);
+  }
+}
+
+.ScrollDown {
+  opacity: 0;
+  animation: fadeInDown 250ms forwards;
+  animation-delay: 4s;
+  font-size: 48px;
+}
+
+.ListTitle {
+  color: $color--grey;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.ItemLinks {
+  list-style-position: inside;
+  list-style-type: circle;
+  margin-bottom: $spacing--large;
 
   li {
-    &::before {
-      content: '* ';
-    }
+    font-size: 24px;
+    font-family: $font--gt;
 
     a {
+      color: $color--white;
       text-decoration: none;
 
       &:hover {
@@ -35,9 +114,20 @@
       }
     }
   }
+}
+
+.WorkTogether {
+  font-family: $font--gt;
+  font-size: 18px;
+  color: $color--grey;
+  margin-bottom: 20px;
+
+  @media (min-width: $mq--tablet) {
+    font-size: 20px;
+  }
 
   a {
-    color: $color--black;
+    color: $color--grey;
   }
 }
 
@@ -49,10 +139,13 @@
   }
 }
 
-@keyframes rainbow {
-  @for $i from 1 through 36 {
-    #{100% * ($i/36)} {
-      color: hsl($i*10, 60%, 70%);
-    }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

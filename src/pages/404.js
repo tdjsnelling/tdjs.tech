@@ -11,7 +11,7 @@ class NotFoundPage extends React.PureComponent {
     return (
       <Layout location={location}>
         <Content>
-          <h1 className={styles.Heading}>404</h1>
+          <h1 className={styles.Heading}>Error 404</h1>
           <p className={styles.Text}>
             That page or resource could not be found. Why don't you head back{' '}
             <Link to="/" className={styles.Back}>
