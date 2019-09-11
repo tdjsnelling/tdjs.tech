@@ -183,31 +183,26 @@
   margin-bottom: $spacing--large;
 
   li {
-    font-size: 18px;
     font-family: $font--gt;
+    font-size: 18px;
 
     @media (min-width: $mq--tablet) {
-      font-size: 24px;
+      font-size: 34px;
+    }
+
+    &:hover {
+      list-style-type: disc;
     }
 
     a {
       color: $color--white;
       text-decoration: none;
-      position: relative;
-
-      &::after {
-        content: '→';
-        position: absolute;
-        right: -10px;
-        opacity: 0;
-        transition: 250ms;
-      }
+      display: block;
+      transition: 250ms;
 
       &:hover {
-        &::after {
-          opacity: 1;
-          right: -40px;
-        }
+        font-size: 48px;
+        padding: 10px 0;
       }
     }
   }
