@@ -1,43 +1,225 @@
 @import '../../scss/settings.scss';
 
-.ProfilePhoto {
-  width: 150px;
-  margin-bottom: 40px;
-  border: 4px solid $color--black;
-}
+.Panel {
+  height: 100vh;
+  position: relative;
 
-.Heading {
-  font-family: $font--ubuntu;
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-
-.Hi {
-  &:hover {
-    animation: rainbow 500ms linear infinite;
+  @media (min-width: $mq--tablet) {
+    height: calc(100vh - 80px);
   }
 }
 
-.Links {
-  margin: 20px 0;
-  list-style: none;
+.UrlTag {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
 
-  li {
+  &::after {
+    content: '';
+    height: 1px;
+    width: 40px;
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    background: $color--white;
+  }
+}
+
+.Heading {
+  font-family: $font--gt;
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: $spacing--large;
+  color: $color--grey;
+
+  @media (min-width: $mq--tablet) {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  a {
+    color: $color--white;
+    text-decoration: none;
+  }
+
+  .Line {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0 0 5px;
+
     &::before {
-      content: '* ';
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: $color--black;
+      animation: revealBefore 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+      transform: translateX(0);
     }
 
-    a {
-      text-decoration: none;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: $color--grey--light;
+      animation: revealAfter 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+      transform: translateX(-101%);
+    }
 
-      &:hover {
-        text-decoration: underline;
+    @media (max-width: $mq--tablet - 1) {
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          &::before,
+          &::after {
+            animation-delay: $i * 0.4s;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $mq--tablet) {
+      @for $i from 1 through 7 {
+        &:nth-of-type(#{$i}) {
+          &::before,
+          &::after {
+            animation-delay: $i * 0.4s;
+          }
+        }
       }
     }
   }
 
+  .Name {
+    color: $color--white;
+  }
+}
+
+@keyframes revealBefore {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes revealAfter {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(101%);
+  }
+}
+
+.Date {
+  font-family: $font--gt;
+  font-size: 24px;
+  position: absolute;
+  bottom: $spacing--large;
+  right: 0;
+  opacity: 0;
+  animation: fadeInLeft 250ms forwards;
+  animation-delay: 5.25s;
+  color: $color--grey;
+
+  @media (min-width: $mq--tablet) {
+    animation-delay: 4.25s;
+  }
+
+  &::after {
+    content: '';
+    height: 1px;
+    width: 1000%;
+    background: $color--grey;
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+  }
+}
+
+.ScrollDown {
+  opacity: 0;
+  animation: fadeInDown 250ms forwards, bounce 5000ms infinite;
+  animation-delay: 5s;
+  font-size: 38px !important;
+  line-height: 16px !important;
+  color: $color--grey;
+  position: absolute;
+  bottom: $spacing--large;
+
+  @media (min-width: $mq--tablet) {
+    animation-delay: 4s;
+  }
+}
+
+.ListTitle {
+  color: $color--grey;
+  text-transform: uppercase;
+  font-size: 20px;
+  position: relative;
+
+  &::before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    background: $color--grey;
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+  }
+}
+
+.ItemLinks {
+  list-style-type: circle;
+  margin-bottom: $spacing--large;
+
+  li {
+    font-family: $font--gt;
+    font-size: 20px;
+
+    @media (min-width: $mq--tablet) {
+      font-size: 34px;
+    }
+
+    &:hover {
+      list-style-type: disc;
+    }
+
+    a {
+      color: $color--white;
+      text-decoration: none;
+      display: block;
+      transition: 250ms;
+
+      &:hover {
+        font-size: 48px;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+.WorkTogether {
+  font-family: $font--gt;
+  font-size: 18px;
+  color: $color--grey;
+  margin-bottom: 20px;
+
+  @media (min-width: $mq--tablet) {
+    font-size: 20px;
+  }
+
   a {
-    color: $color--black;
+    color: $color--grey;
   }
 }
 
@@ -49,10 +231,36 @@
   }
 }
 
-@keyframes rainbow {
-  @for $i from 1 through 36 {
-    #{100% * ($i/36)} {
-      color: hsl($i*10, 60%, 70%);
-    }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  10%,
+  20% {
+    transform: translateY(0);
+  }
+  5%,
+  15% {
+    transform: translateY(20px);
   }
 }

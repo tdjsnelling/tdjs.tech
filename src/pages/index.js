@@ -1,86 +1,205 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { Helmet } from 'react-helmet'
+import classnames from 'classnames'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
 import styles from './styles/Index.module.scss'
 
-const IndexPage = ({ location }) => (
-  <Layout location={location}>
-    <Content>
-      <img
-        className={styles.ProfilePhoto}
-        src="https://pbs.twimg.com/profile_images/875435865534869504/73SZbGR5_400x400.jpg"
-        alt="profile photo"
-      />
-      <h1 className={styles.Heading}>Tom Snelling</h1>
-      <p>
-        <strong className={styles.Hi}>Hi there!</strong> I'm Tom, and I am a
-        full-stack web developer from the UK. I am a lover of JavaScript,
-        advocate of digital privacy and free speech, and a passionate
-        entrepreneur.
-      </p>
-      <p>
-        I'm currently working as a front-end developer for{' '}
-        <a href="https://clock.co.uk" target="_blank" rel="noopener noreferrer">
-          Clock
-        </a>
-        , and studying computer science at Loughborough University.
-      </p>
-      <ul className={styles.Links}>
-        <li>
-          <Link to="/portfolio">Portfolio</Link>
-        </li>
-        <li>
-          <Link to="/projects">Projects</Link>
-        </li>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
-          <OutboundLink
-            href="https://github.com/tdjsnelling"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </OutboundLink>
-        </li>
-      </ul>
-      <p>
-        Want to work together? I'd love to! Please contact me on{' '}
-        <OutboundLink
-          href="https://twitter.com/tdjsnelling"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </OutboundLink>{' '}
-        or send an email to{' '}
-        <a
-          href="mailto:tom@snelling.xyz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          tom@snelling.xyz
-        </a>
-        .
-      </p>
-      <p className={styles.Footer}>
-        &copy; {new Date().getFullYear()}
-        &nbsp;/&nbsp;
-        <a href="/keybase.txt" target="_blank" rel="noopener noreferrer">
-          proof
-        </a>
-        &nbsp;/&nbsp;
-        <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
-          pgp
-        </a>
-        <a rel="me" href="https://mastodon.social/@tdjsnelling" />
-      </p>
-    </Content>
-  </Layout>
-)
+class IndexPage extends React.PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      isMobile: false
+    }
+    this.onBreakpointChange = this.onBreakpointChange.bind(this)
+  }
+
+  componentDidMount() {
+    this.breakpoint = window.matchMedia('(max-width: 601px)')
+    this.breakpoint.addListener(this.onBreakpointChange)
+    this.setState({ isMobile: this.breakpoint.matches })
+  }
+
+  onBreakpointChange(e) {
+    this.setState({ isMobile: e.matches })
+  }
+
+  render() {
+    const { location, data } = this.props
+    const { isMobile } = this.state
+
+    const portfolioItems = data.allMarkdownRemark.edges.filter(x =>
+      x.node.fields.slug.includes('/portfolio/')
+    )
+
+    const projectItems = data.allMarkdownRemark.edges.filter(x =>
+      x.node.fields.slug.includes('/projects/')
+    )
+
+    const blogItems = data.allMarkdownRemark.edges.filter(x =>
+      x.node.fields.slug.includes('/blog/')
+    )
+
+    return (
+      <Layout location={location}>
+        <Helmet>
+          <title>Tom Snelling — Full-stack web developer</title>
+          <meta
+            property="og:title"
+            content="Tom Snelling — Full-stack web developer"
+          />
+        </Helmet>
+        <Content>
+          <div className={styles.Panel}>
+            <p className={styles.UrlTag}>tdjs.tech</p>
+            {!isMobile ? (
+              <h1 className={styles.Heading}>
+                <span className={styles.Line}>
+                  Hi there! I’m{' '}
+                  <span className={styles.Name}>Tom Snelling</span>.{' '}
+                </span>
+                <span className={styles.Line}>I am a full-stack web </span>
+                <span className={styles.Line}>developer from the UK. </span>
+                <span className={styles.Line}>Also: lover of JavaScript, </span>
+                <span className={styles.Line}>advocate of digital rights</span>
+                <span className={styles.Line}>and open source, currently</span>
+                <span className={styles.Line}>
+                  working at{' '}
+                  <OutboundLink
+                    href="https://clock.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Clock
+                  </OutboundLink>
+                  .
+                </span>
+              </h1>
+            ) : (
+              <h1 className={styles.Heading}>
+                <span className={styles.Line}>
+                  Hi there! I’m <span className={styles.Name}>Tom</span>{' '}
+                </span>
+                <span className={styles.Line}>
+                  <span className={styles.Name}>Snelling. </span>I am a
+                </span>
+                <span className={styles.Line}>full-stack web </span>
+                <span className={styles.Line}>developer from the </span>
+                <span className={styles.Line}>UK. Also: lover of </span>
+                <span className={styles.Line}>JavaScript, </span>
+                <span className={styles.Line}>advocate of digital</span>
+                <span className={styles.Line}>rights and open </span>
+                <span className={styles.Line}>source, currently </span>
+                <span className={styles.Line}>
+                  working at{' '}
+                  <OutboundLink
+                    href="https://clock.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Clock
+                  </OutboundLink>
+                  .
+                </span>
+              </h1>
+            )}
+            <p className={styles.Date}>{new Date().getFullYear()}</p>
+            <p className={classnames(styles.ScrollDown, 'material-icons')}>
+              keyboard_arrow_down
+            </p>
+          </div>
+          <h2 className={styles.ListTitle} id="portfolio">
+            Portfolio
+          </h2>
+          <ul className={styles.ItemLinks}>
+            {portfolioItems.map((item, i) => (
+              <li key={i}>
+                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
+                  {item.node.frontmatter.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <h2 className={styles.ListTitle} id="projects">
+            Open source
+          </h2>
+          <ul className={styles.ItemLinks}>
+            {projectItems.map((item, i) => (
+              <li key={i}>
+                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
+                  {item.node.frontmatter.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <h2 className={styles.ListTitle} id="blog">
+            Blog
+          </h2>
+          <ul className={styles.ItemLinks}>
+            {blogItems.map((item, i) => (
+              <li key={i}>
+                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
+                  {item.node.frontmatter.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className={styles.WorkTogether}>
+            Want to work together? Send me an email at{' '}
+            <a
+              href="mailto:tom@snelling.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              tom@snelling.xyz
+            </a>
+            . You can check out more work over at{' '}
+            <OutboundLink
+              href="https://github.com/tdjsnelling"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </OutboundLink>
+            .
+          </p>
+          <p className={styles.Footer}>
+            &copy; {new Date().getFullYear()}
+            &nbsp;/&nbsp;
+            <a href="/keybase.txt" target="_blank" rel="noopener noreferrer">
+              proof
+            </a>
+            &nbsp;/&nbsp;
+            <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
+              pgp public key
+            </a>
+            <a rel="me" href="https://mastodon.social/@tdjsnelling" />
+          </p>
+        </Content>
+      </Layout>
+    )
+  }
+}
+
+export const query = graphql`
+  {
+    allMarkdownRemark(sort: { fields: [frontmatter___title] }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            summary
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

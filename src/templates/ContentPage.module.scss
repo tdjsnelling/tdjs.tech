@@ -5,10 +5,16 @@
 }
 
 .Title {
-  font-size: 35px;
-  color: $color--black;
-  font-family: $font--ubuntu;
-  margin: 20px 0 40px;
+  font-size: 24px;
+  line-height: 30px;
+  font-family: $font--gt;
+  margin: 20px 0;
+
+  @media (min-width: $mq--tablet) {
+    font-size: 48px;
+    line-height: 58px;
+    margin: 20px 0 40px;
+  }
 }
 
 .Summary {
@@ -38,6 +44,8 @@
   }
 
   :global(.gatsby-resp-image-link) {
+    margin: $spacing--medium 0;
+
     img {
       width: 100%;
     }
@@ -48,17 +56,13 @@
   }
 }
 
-.Back {
-  color: $color--black;
-}
-
 .ContentLink {
-  margin-top: 40px;
+  margin-top: $spacing--medium;
   color: $color--black;
   display: block;
+  overflow-wrap: break-word;
 }
 
 :global(#disqus_thread) {
-  margin-top: 40px;
+  margin-top: $spacing--medium;
 }
-

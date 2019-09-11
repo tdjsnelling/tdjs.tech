@@ -1,7 +1,54 @@
 @import '../../scss/settings.scss';
+@font-face {
+  font-family: 'GT America Expanded';
+  src: url('/fonts/GTAmerica-ExpandedBlack.eot');
+  src: url('/fonts/GTAmerica-ExpandedBlack.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/GTAmerica-ExpandedBlack.woff2') format('woff2'),
+    url('/fonts/GTAmerica-ExpandedBlack.woff') format('woff'),
+    url('/fonts/GTAmerica-ExpandedBlack.ttf') format('truetype'),
+    url('/fonts/GTAmerica-ExpandedBlack.svg#GTAmerica-ExpandedBlack')
+      format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
 
 .Layout {
   min-height: 100vh;
+  background-color: $color--black;
+  color: $color--white;
+  overflow-x: hidden;
+
+  &.transition {
+    animation: toDark 250ms forwards;
+  }
+
+  &.light {
+    background-color: $color--white--full;
+    color: $color--black;
+
+    &.transition {
+      animation: toLight 250ms forwards;
+    }
+  }
+}
+
+@keyframes toLight {
+  0% {
+    background-color: $color--black;
+  }
+  100% {
+    background-color: $color--white--full;
+  }
+}
+
+@keyframes toDark {
+  0% {
+    background-color: $color--white;
+  }
+  100% {
+    background-color: $color--black;
+  }
 }
 
 :global {
@@ -13,9 +60,7 @@
   }
 
   body {
-    color: $color--black;
     font-family: $font--sourcecode;
-    font-size: 14px;
     line-height: 1.4;
   }
 }
