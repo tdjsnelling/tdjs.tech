@@ -7,7 +7,7 @@
   padding: $spacing--medium;
 
   @media (min-width: $mq--tablet) {
-    padding: $spacing--large 20px;
+    padding: $spacing--large $spacing--medium;
   }
 
   &.narrow {
