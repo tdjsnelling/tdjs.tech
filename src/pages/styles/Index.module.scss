@@ -9,10 +9,28 @@
   }
 }
 
+.UrlTag {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    height: 1px;
+    width: 40px;
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    background: $color--white;
+  }
+}
+
 .Heading {
   font-family: $font--gt;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 22px;
+  line-height: 28px;
   margin-bottom: $spacing--large;
   color: $color--grey;
 
@@ -56,11 +74,24 @@
       transform: translateX(-101%);
     }
 
-    @for $i from 1 through 7 {
-      &:nth-of-type(#{$i}) {
-        &::before,
-        &::after {
-          animation-delay: $i * 0.4s;
+    @media (max-width: $mq--tablet - 1) {
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          &::before,
+          &::after {
+            animation-delay: $i * 0.4s;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $mq--tablet) {
+      @for $i from 1 through 7 {
+        &:nth-of-type(#{$i}) {
+          &::before,
+          &::after {
+            animation-delay: $i * 0.4s;
+          }
         }
       }
     }
@@ -97,8 +128,12 @@
   right: 0;
   opacity: 0;
   animation: fadeInLeft 250ms forwards;
-  animation-delay: 4.25s;
+  animation-delay: 5.25s;
   color: $color--grey;
+
+  @media (min-width: $mq--tablet) {
+    animation-delay: 4.25s;
+  }
 
   &::after {
     content: '';
@@ -114,12 +149,16 @@
 .ScrollDown {
   opacity: 0;
   animation: fadeInDown 250ms forwards, bounce 5000ms infinite;
-  animation-delay: 4s;
-  font-family: $font--gt;
-  font-size: 24px;
+  animation-delay: 5s;
+  font-size: 38px !important;
+  line-height: 16px !important;
   color: $color--grey;
   position: absolute;
   bottom: $spacing--large;
+
+  @media (min-width: $mq--tablet) {
+    animation-delay: 4s;
+  }
 }
 
 .ListTitle {
@@ -140,13 +179,16 @@
 }
 
 .ItemLinks {
-  list-style-position: inside;
   list-style-type: circle;
   margin-bottom: $spacing--large;
 
   li {
-    font-size: 24px;
+    font-size: 18px;
     font-family: $font--gt;
+
+    @media (min-width: $mq--tablet) {
+      font-size: 24px;
+    }
 
     a {
       color: $color--white;

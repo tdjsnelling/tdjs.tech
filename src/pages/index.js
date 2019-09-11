@@ -2,14 +2,34 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Helmet } from 'react-helmet'
+import classnames from 'classnames'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
 import styles from './styles/Index.module.scss'
 
 class IndexPage extends React.PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      isMobile: false
+    }
+    this.onBreakpointChange = this.onBreakpointChange.bind(this)
+  }
+
+  componentDidMount() {
+    this.breakpoint = window.matchMedia('(max-width: 601px)')
+    this.breakpoint.addListener(this.onBreakpointChange)
+    this.setState({ isMobile: this.breakpoint.matches })
+  }
+
+  onBreakpointChange(e) {
+    this.setState({ isMobile: e.matches })
+  }
+
   render() {
     const { location, data } = this.props
+    const { isMobile } = this.state
 
     const portfolioItems = data.allMarkdownRemark.edges.filter(x =>
       x.node.fields.slug.includes('/portfolio/')
@@ -34,29 +54,62 @@ class IndexPage extends React.PureComponent {
         </Helmet>
         <Content>
           <div className={styles.Panel}>
-            <h1 className={styles.Heading}>
-              <span className={styles.Line}>
-                Hi there! I’m <span className={styles.Name}>Tom Snelling</span>.{' '}
-              </span>
-              <span className={styles.Line}>I am a full-stack web </span>
-              <span className={styles.Line}>developer from the UK. </span>
-              <span className={styles.Line}>Also: lover of JavaScript, </span>
-              <span className={styles.Line}>advocate of digital rights</span>
-              <span className={styles.Line}>and open source, currently</span>
-              <span className={styles.Line}>
-                working at{' '}
-                <OutboundLink
-                  href="https://clock.co.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Clock
-                </OutboundLink>
-                .
-              </span>
-            </h1>
+            <p className={styles.UrlTag}>tdjs.tech</p>
+            {!isMobile ? (
+              <h1 className={styles.Heading}>
+                <span className={styles.Line}>
+                  Hi there! I’m{' '}
+                  <span className={styles.Name}>Tom Snelling</span>.{' '}
+                </span>
+                <span className={styles.Line}>I am a full-stack web </span>
+                <span className={styles.Line}>developer from the UK. </span>
+                <span className={styles.Line}>Also: lover of JavaScript, </span>
+                <span className={styles.Line}>advocate of digital rights</span>
+                <span className={styles.Line}>and open source, currently</span>
+                <span className={styles.Line}>
+                  working at{' '}
+                  <OutboundLink
+                    href="https://clock.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Clock
+                  </OutboundLink>
+                  .
+                </span>
+              </h1>
+            ) : (
+              <h1 className={styles.Heading}>
+                <span className={styles.Line}>
+                  Hi there! I’m <span className={styles.Name}>Tom</span>{' '}
+                </span>
+                <span className={styles.Line}>
+                  <span className={styles.Name}>Snelling. </span>I am a
+                </span>
+                <span className={styles.Line}>full-stack web </span>
+                <span className={styles.Line}>developer from the </span>
+                <span className={styles.Line}>UK. Also: lover of </span>
+                <span className={styles.Line}>JavaScript, </span>
+                <span className={styles.Line}>advocate of digital</span>
+                <span className={styles.Line}>rights and open </span>
+                <span className={styles.Line}>source, currently </span>
+                <span className={styles.Line}>
+                  working at{' '}
+                  <OutboundLink
+                    href="https://clock.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Clock
+                  </OutboundLink>
+                  .
+                </span>
+              </h1>
+            )}
             <p className={styles.Date}>{new Date().getFullYear()}</p>
-            <p className={styles.ScrollDown}>scroll</p>
+            <p className={classnames(styles.ScrollDown, 'material-icons')}>
+              keyboard_arrow_down
+            </p>
           </div>
           <h2 className={styles.ListTitle} id="portfolio">
             Portfolio

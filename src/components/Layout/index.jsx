@@ -34,10 +34,9 @@ class Layout extends React.Component {
           <meta property="og:image" content={location.origin + '/meta.png'} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="Tom Snelling" />
-          {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js" /> */}
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Material+Icons"
           />
         </Helmet>
         {children}
