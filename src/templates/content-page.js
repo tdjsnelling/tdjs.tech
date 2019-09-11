@@ -16,7 +16,7 @@ class ContentPage extends React.PureComponent {
     const isBlog = type.includes('/blog/')
 
     return (
-      <Layout location={location} light>
+      <Layout location={location} light transition>
         <Helmet>
           <title>{`${content.frontmatter.title} — Tom Snelling`}</title>
           <meta

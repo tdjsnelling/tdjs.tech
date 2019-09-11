@@ -55,7 +55,8 @@ class IndexPage extends React.PureComponent {
                 .
               </span>
             </h1>
-            <p className={styles.ScrollDown}>↓</p>
+            <p className={styles.Date}>{new Date().getFullYear()}</p>
+            <p className={styles.ScrollDown}>scroll</p>
           </div>
           <h2 className={styles.ListTitle} id="portfolio">
             Portfolio

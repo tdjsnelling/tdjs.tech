@@ -22,11 +22,11 @@ class Layout extends React.Component {
           <meta property="og:title" content="Tom Snelling" />
           <meta
             name="description"
-            content="Full-stack JavaScript developer from the UK. Placement front-end developer for Clock. Computer science at Loughborough University."
+            content="Full-stack web developer from the UK. Front-end developer for Clock. Computer science at Loughborough University."
           />
           <meta
             property="og:description"
-            content="Full-stack JavaScript developer from the UK. Placement front-end developer for Clock. Computer science at Loughborough University."
+            content="Full-stack web developer from the UK. Front-end developer for Clock. Computer science at Loughborough University."
           />
           <meta property="og:site_name" content="Tom Snelling" />
           <meta property="og:type" content="website" />
@@ -37,7 +37,7 @@ class Layout extends React.Component {
           {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js" /> */}
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Source+Code+Pro:400,700"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"
           />
         </Helmet>
         {children}

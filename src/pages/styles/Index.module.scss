@@ -89,11 +89,35 @@
   }
 }
 
+.Date {
+  font-family: $font--gt;
+  font-size: 24px;
+  position: absolute;
+  bottom: $spacing--large;
+  right: 0;
+  opacity: 0;
+  animation: fadeInLeft 250ms forwards;
+  animation-delay: 4.25s;
+  color: $color--grey;
+
+  &::after {
+    content: '';
+    height: 1px;
+    width: 1000%;
+    background: $color--grey;
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+  }
+}
+
 .ScrollDown {
   opacity: 0;
-  animation: fadeInDown 250ms forwards;
+  animation: fadeInDown 250ms forwards, bounce 5000ms infinite;
   animation-delay: 4s;
-  font-size: 48px;
+  font-family: $font--gt;
+  font-size: 24px;
+  color: $color--grey;
   position: absolute;
   bottom: $spacing--large;
 }
@@ -102,6 +126,17 @@
   color: $color--grey;
   text-transform: uppercase;
   font-size: 20px;
+  position: relative;
+
+  &::before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    background: $color--grey;
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+  }
 }
 
 .ItemLinks {
@@ -116,9 +151,21 @@
     a {
       color: $color--white;
       text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: '→';
+        position: absolute;
+        right: -10px;
+        opacity: 0;
+        transition: 250ms;
+      }
 
       &:hover {
-        text-decoration: underline;
+        &::after {
+          opacity: 1;
+          right: -40px;
+        }
       }
     }
   }
@@ -155,5 +202,28 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  10%,
+  20% {
+    transform: translateY(0);
+  }
+  5%,
+  15% {
+    transform: translateY(20px);
   }
 }

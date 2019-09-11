@@ -17,6 +17,7 @@
   min-height: 100vh;
   background-color: $color--black;
   color: $color--white;
+  overflow-x: hidden;
 
   &.transition {
     animation: toDark 250ms forwards;
