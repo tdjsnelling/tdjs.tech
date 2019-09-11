@@ -30,9 +30,6 @@ class ContentPage extends React.PureComponent {
           />
         </Helmet>
         <Content narrow>
-          <Link to={`/`} state={{ fromContent: true }} className={styles.Back}>
-            &larr; home
-          </Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
           {isBlog && <p className={styles.Date}>{content.frontmatter.date}</p>}
           <p className={styles.Summary}>{content.frontmatter.summary}</p>
