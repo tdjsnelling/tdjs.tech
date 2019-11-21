@@ -75,7 +75,7 @@
     }
 
     @media (max-width: $mq--tablet - 1) {
-      @for $i from 1 through 10 {
+      @for $i from 1 through 9 {
         &:nth-of-type(#{$i}) {
           &::before,
           &::after {
@@ -86,7 +86,7 @@
     }
 
     @media (min-width: $mq--tablet) {
-      @for $i from 1 through 7 {
+      @for $i from 1 through 6 {
         &:nth-of-type(#{$i}) {
           &::before,
           &::after {

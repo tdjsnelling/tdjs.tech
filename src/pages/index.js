@@ -65,18 +65,7 @@ class IndexPage extends React.PureComponent {
                 <span className={styles.Line}>developer from the UK. </span>
                 <span className={styles.Line}>Also: lover of JavaScript, </span>
                 <span className={styles.Line}>advocate of digital rights</span>
-                <span className={styles.Line}>and open source, currently</span>
-                <span className={styles.Line}>
-                  working at{' '}
-                  <OutboundLink
-                    href="https://clock.co.uk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Clock
-                  </OutboundLink>
-                  .
-                </span>
+                <span className={styles.Line}>and open source.</span>
               </h1>
             ) : (
               <h1 className={styles.Heading}>
@@ -92,18 +81,7 @@ class IndexPage extends React.PureComponent {
                 <span className={styles.Line}>JavaScript, </span>
                 <span className={styles.Line}>advocate of digital</span>
                 <span className={styles.Line}>rights and open </span>
-                <span className={styles.Line}>source, currently </span>
-                <span className={styles.Line}>
-                  working at{' '}
-                  <OutboundLink
-                    href="https://clock.co.uk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Clock
-                  </OutboundLink>
-                  .
-                </span>
+                <span className={styles.Line}>source.</span>
               </h1>
             )}
             <p className={styles.Date}>{new Date().getFullYear()}</p>
@@ -148,15 +126,22 @@ class IndexPage extends React.PureComponent {
             ))}
           </ul>
           <p className={styles.WorkTogether}>
-            Want to work together? Send me an email at{' '}
+            Want to work together? Get in touch via{' '}
             <a
-              href="mailto:tom@snelling.xyz"
+              href="https://twitter.com/tdjsnelling"
               target="_blank"
               rel="noopener noreferrer"
             >
-              tom@snelling.xyz
+              Twitter
             </a>
-            . You can check out more work over at{' '}
+            {' '}or{' '}
+            <a
+              href="mailto:tomsnelling8+website@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              email
+            </a>. You can check out more work over at{' '}
             <OutboundLink
               href="https://github.com/tdjsnelling"
               target="_blank"
