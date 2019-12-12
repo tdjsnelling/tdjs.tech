@@ -30,6 +30,7 @@ class ContentPage extends React.PureComponent {
           />
         </Helmet>
         <Content narrow>
+          <Link to="/" className={styles.HomeLink}>tdjs.tech</Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
           {isBlog && <p className={styles.Date}>{content.frontmatter.date}</p>}
           <p className={styles.Summary}>{content.frontmatter.summary}</p>
