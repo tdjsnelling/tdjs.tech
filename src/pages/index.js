@@ -84,7 +84,7 @@ class IndexPage extends React.PureComponent {
                 <span className={styles.Line}>source.</span>
               </h1>
             )}
-            <p className={styles.Date}>{new Date().getFullYear()}</p>
+            <p className={styles.Date}>&copy; {new Date().getFullYear()}</p>
             <p className={classnames(styles.ScrollDown, 'material-icons')}>
               keyboard_arrow_down
             </p>

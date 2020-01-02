@@ -1,6 +1,6 @@
 ---
 title: 'AirBomb - AirDrop denial of service'
-summary: 'From being personally exploited on a train to Apple patching the attack.'
+summary: 'AirDrop denial of service attack rendering an iOS device unusable until restarted.'
 date: '2019-12-10'
 ---
 
@@ -28,7 +28,7 @@ I emailed Apple product security and after some back-and-forth a patch was intro
 
 Timeline:
 
-* **2019-10-07**: Exploit reported to Apple product security
+* **2019-10-07**: DoS attack reported to Apple product security
 * **2019-10-08**: Reply from Apple stating that they will be investigating
 * **2019-11-14**: Second reply from Apple stating that the issue will be patched in iOS 13.3, and asking me to test the beta release
 * **2019-12-04**: I confirm that the issue is fixed in iOS 13.3 beta

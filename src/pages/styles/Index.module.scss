@@ -163,7 +163,7 @@
 
 .ListTitle {
   color: $color--grey;
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-size: 20px;
   position: relative;
 
@@ -187,7 +187,7 @@
     font-size: 20px;
 
     @media (min-width: $mq--tablet) {
-      font-size: 34px;
+      font-size: 38px;
     }
 
     &:hover {
@@ -198,11 +198,11 @@
       color: $color--white;
       text-decoration: none;
       display: block;
-      transition: 250ms;
 
       &:hover {
-        font-size: 48px;
-        padding: 10px 0;
+        -webkit-text-stroke: 1px $color--white;
+        text-stroke: 1px $color--white;
+        color: $color--black;
       }
     }
   }
