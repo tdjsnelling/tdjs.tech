@@ -44,7 +44,7 @@ class IndexPage extends React.PureComponent {
     )
 
     return (
-      <Layout location={location}>
+      <Layout location={location} light>
         <Helmet>
           <title>Tom Snelling — Full-stack web developer</title>
           <meta
@@ -59,13 +59,12 @@ class IndexPage extends React.PureComponent {
               <h1 className={styles.Heading}>
                 <span className={styles.Line}>
                   Hi there! I’m{' '}
-                  <span className={styles.Name}>Tom Snelling</span>.{' '}
+                  <span className={styles.Name}>Tom</span>{' '}
                 </span>
-                <span className={styles.Line}>I am a full-stack web </span>
-                <span className={styles.Line}>developer from the UK. </span>
-                <span className={styles.Line}>Also: lover of JavaScript, </span>
-                <span className={styles.Line}>advocate of digital rights</span>
-                <span className={styles.Line}>and open source.</span>
+                <span className={styles.Line}><span className={styles.Name}>Snelling</span>. I am a</span>
+                <span className={styles.Line}>full-stack web</span>
+                <span className={styles.Line}>developer from the</span>
+                <span className={styles.Line}>UK.</span>
               </h1>
             ) : (
               <h1 className={styles.Heading}>
@@ -77,17 +76,10 @@ class IndexPage extends React.PureComponent {
                 </span>
                 <span className={styles.Line}>full-stack web </span>
                 <span className={styles.Line}>developer from the </span>
-                <span className={styles.Line}>UK. Also: lover of </span>
-                <span className={styles.Line}>JavaScript, </span>
-                <span className={styles.Line}>advocate of digital</span>
-                <span className={styles.Line}>rights and open </span>
-                <span className={styles.Line}>source.</span>
+                <span className={styles.Line}>UK.</span>
               </h1>
             )}
             <p className={styles.Date}>&copy; {new Date().getFullYear()}</p>
-            <p className={classnames(styles.ScrollDown, 'material-icons')}>
-              keyboard_arrow_down
-            </p>
           </div>
           <h2 className={styles.ListTitle} id="portfolio">
             Portfolio
@@ -152,12 +144,10 @@ class IndexPage extends React.PureComponent {
             .
           </p>
           <p className={styles.Footer}>
-            &copy; {new Date().getFullYear()}
-            &nbsp;/&nbsp;
             <a href="/keybase.txt" target="_blank" rel="noopener noreferrer">
-              proof
+              keybase proof
             </a>
-            &nbsp;/&nbsp;
+            &nbsp;&bull;&nbsp;
             <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
               pgp public key
             </a>
