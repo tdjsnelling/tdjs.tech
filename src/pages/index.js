@@ -72,7 +72,7 @@ class IndexPage extends React.PureComponent {
                   Hi there! I’m <span className={styles.Name}>Tom</span>{' '}
                 </span>
                 <span className={styles.Line}>
-                  <span className={styles.Name}>Snelling. </span>I am a
+                  <span className={styles.Name}>Snelling</span>. I am a
                 </span>
                 <span className={styles.Line}>full-stack web </span>
                 <span className={styles.Line}>developer from the </span>

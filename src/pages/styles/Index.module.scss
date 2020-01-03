@@ -30,10 +30,15 @@
 
 .Heading {
   font-family: $font--gt;
-  font-size: 4.75vw;
-  line-height: calc(4.75vw + 1.2vw);
+  font-size: 25px;
+  line-height: 32px;
   margin-bottom: $spacing--large;
   color: $color--grey;
+
+  @media screen and (min-width: 420px) {
+    font-size: 4.75vw;
+    line-height: calc(4.75vw + 1.2vw);
+  }
 
   @media screen and (min-width: 1400px) {
     font-size: 70px;
@@ -109,7 +114,7 @@
 
 .Date {
   font-family: $font--gt;
-  font-size: 24px;
+  font-size: 18px;
   position: absolute;
   bottom: $spacing--large;
   right: 0;
@@ -119,6 +124,7 @@
   color: $color--black;
 
   @media (min-width: $mq--tablet) {
+    font-size: 24px;
     animation-delay: 3s;
   }
 
@@ -137,11 +143,15 @@
   display: inline-block;
   color: $color--black;
   text-transform: lowercase;
-  font-size: 30px;
+  font-size: 18px;
   background-image: linear-gradient($color--primary, $color--primary);
   background-size: 100% 35%;
   background-position: 0 100%;
   background-repeat: no-repeat;
+
+  @media (min-width: $mq--tablet) {
+    font-size: 30px;
+  }
 }
 
 .ItemLinks {
@@ -151,10 +161,11 @@
   li {
     font-family: $font--gt;
     font-size: 20px;
-    padding: 10px 0;
+    padding: 7.5px 0;
 
     @media (min-width: $mq--tablet) {
       font-size: 38px;
+      padding: 10px 0;
     }
 
     a {
