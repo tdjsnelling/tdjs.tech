@@ -9,6 +9,26 @@ import Content from '../components/Content'
 import styles from './ContentPage.module.scss'
 
 class ContentPage extends React.PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      scrollPercentage: 0
+    }
+    this.getScrollPercentage = this.getScrollPercentage.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.getScrollPercentage)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.getScrollPercentage)
+  }
+
+  getScrollPercentage() {
+    this.setState({ scrollPercentage: ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100) })
+  }
+
   render() {
     const { data, location } = this.props
     const content = data.markdownRemark
@@ -29,6 +49,7 @@ class ContentPage extends React.PureComponent {
             content={content.frontmatter.summary}
           />
         </Helmet>
+        <div className={styles.ScrollIndicator} style={{ width: `${this.state.scrollPercentage}%` }} />
         <Content narrow>
           <Link to="/" className={styles.HomeLink}>tdjs.tech</Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
