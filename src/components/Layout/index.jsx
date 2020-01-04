@@ -17,16 +17,17 @@ class Layout extends React.Component {
       >
         <Helmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
-          <title>Tom Snelling</title>
+          <title>Tom Snelling — Full-stack web developer</title>
+          <meta name="author" content="Tom Snelling" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta property="og:title" content="Tom Snelling" />
+          <meta property="og:title" content="Tom Snelling — Full-stack web developer" />
           <meta
             name="description"
-            content="Full-stack web developer from the UK. Front-end developer for Clock. Computer science at Loughborough University."
+            content="Full-stack web developer from the UK. Computer science at Loughborough University."
           />
           <meta
             property="og:description"
-            content="Full-stack web developer from the UK. Front-end developer for Clock. Computer science at Loughborough University."
+            content="Full-stack web developer from the UK. Computer science at Loughborough University."
           />
           <meta property="og:site_name" content="Tom Snelling" />
           <meta property="og:type" content="website" />
@@ -36,7 +37,7 @@ class Layout extends React.Component {
           <meta name="twitter:site" content="Tom Snelling" />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Material+Icons"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"
           />
         </Helmet>
         {children}

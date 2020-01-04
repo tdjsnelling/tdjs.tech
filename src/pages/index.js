@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Helmet } from 'react-helmet'
-import classnames from 'classnames'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 
@@ -45,13 +43,6 @@ class IndexPage extends React.PureComponent {
 
     return (
       <Layout location={location} light>
-        <Helmet>
-          <title>Tom Snelling — Full-stack web developer</title>
-          <meta
-            property="og:title"
-            content="Tom Snelling — Full-stack web developer"
-          />
-        </Helmet>
         <Content>
           <div className={styles.Panel}>
             <p className={styles.UrlTag}>tdjs.tech</p>
