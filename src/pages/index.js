@@ -109,21 +109,13 @@ class IndexPage extends React.PureComponent {
             ))}
           </ul>
           <p className={styles.WorkTogether}>
-            Want to work together? Get in touch via{' '}
+            Want to work together? Email me at{' '}
             <a
-              href="https://twitter.com/tdjsnelling"
+              href="mailto:hello@tdjs.tech"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Twitter
-            </a>
-            {' '}or{' '}
-            <a
-              href="mailto:tomsnelling8+website@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              email
+              hello@tdjs.tech
             </a>. You can check out more work over at{' '}
             <OutboundLink
               href="https://github.com/tdjsnelling"
