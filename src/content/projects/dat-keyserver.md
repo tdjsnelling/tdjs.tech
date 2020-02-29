@@ -14,6 +14,8 @@ I have a node running [here](https://keys.tdjs.tech), try searching 'tom' to fin
 
 If you want to run a node, follow the instructions in the README, linked below. Feel free to start your own pool or join mine with the key:
 
-`9ceccb8abeaba2868fe22d14605790b0b84ac58aba3e48606a710f4d33c5a4f7`
+```
+9ceccb8abeaba2868fe22d14605790b0b84ac58aba3e48606a710f4d33c5a4f7
+```
 
 Keys will be replicated to all nodes within a pool, but not between pools. Bear this in mind if you are thinking of starting a new pool, as you will be starting with no data.

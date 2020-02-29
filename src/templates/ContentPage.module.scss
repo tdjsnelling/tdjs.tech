@@ -15,7 +15,7 @@
   text-decoration: none;
   font-weight: bold;
   background-image: linear-gradient($color--primary, $color--primary);
-  background-size: 100% 35%;
+  background-size: 100% 30%;
   background-position: 0 100%;
   background-repeat: no-repeat;
 }
@@ -48,15 +48,30 @@
   }
 
   a {
-    color: $color--black;
+    color: $color--primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   code {
-    background: $color--grey--light;
-    padding: 8px;
-    display: block;
+    background: $color--grey--lightest;
+    padding: 0 3px;
     overflow-x: auto;
     font-family: $font--sourcecode;
+  }
+
+  pre {
+    background: $color--grey--lightest;
+    padding: 8px;
+    overflow-x: auto;
+  }
+
+  pre > code {
+    padding: 0;
+    background: none;
   }
 
   img {
@@ -69,10 +84,6 @@
     img {
       width: 100%;
     }
-  }
-
-  ul {
-    list-style-position: inside;
   }
 }
 

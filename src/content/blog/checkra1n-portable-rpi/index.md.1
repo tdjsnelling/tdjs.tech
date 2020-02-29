@@ -1,0 +1,52 @@
+---
+title: 'Raspberry Pi Zero based portable checkra1n device'
+summary: 'Boot a checkra1n semi-tethered iOS device anywhere, using nothing but a Raspberry Pi Zero.'
+date: '2020-02-29'
+---
+
+#### Motivation
+
+[checkra1n](https://checkra.in) is a popular jailbreak for iOS 12.3 and up. However, it is only a 'semi-tethered' jailbreak, meaning that the iOS device must be booting using checkra1n every time in order to use the jailbreak. If the device is booted without checkra1n, then it will function as a normal, un-jailbroken iOS device.
+
+Obviously, this can be inconvenient - what if you're away from a computer for an extended period of time and you need to reboot your phone, or it runs out of battery? You cannot make use of any jailbreak dependent features until you can get back to your computer and reboot with checkra1n.
+
+To solve this problem, I used a [Raspberry Pi Zero](https://www.raspberrypi.org/products/raspberry-pi-zero/) (~£5/$5) to build a tiny, portable, cheap checkra1n capable device that can be taken anywhere and used to boot an iOS device with nothing but a portable power supply.
+
+#### Setting up the device
+
+1. Write the latest version of [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/) to a micro SD card.
+2. Mount the `boot` parition of the SD card on a computer, open `config.txt` and add a new line `dtoverlay=dwc2`.
+3. Open `cmdline.txt` and add `modules-load=dwc2,g_ether` after `rootwait`. Ensure you maintain the formatting and spacing of the existing file.
+4. Add a new empty file called `ssh` at the root of the `boot` partition. Note there is no file extension.
+5. Insert the SD into the Pi and plug it into a computer, via the 'USB' port, not 'PWR IN'. The Pi will take ~90 seconds to boot.
+6. Test you can SSH into the Pi with `ssh pi@raspberrypi.local`. If this doesn't work, your USB cable likely isn't OTG capable - I had to try quite a few cables before I found one that worked.
+7. Share your network connection to the Pi. This differs depending on your OS, so it's left up to the reader to find instructions on how to do so.
+8. On the Pi, use `wget` to download the latest checkra1n Linux ARM release from [here](https://checkra.in/releases/).
+9. Test the executable with `sudo ./checkra1n -c`. You should see a 'Waiting for DFU devices' prompt.
+10. Finally, create a systemd service that runs checkra1n on boot. copy `checkra1n.service` (below) to `/etc/systemd/system`.
+11. Run `sudo systemctl enable checkra1n` to enable the service on startup.
+
+Now, whenever the Pi boots it will start checkra1n and wait for a connected device in DFU mode before it executes the jailbreak. Simply plug it into a power outlet or a portable charger, wait ~90 seconds for boot, connect your iOS device and put it into DFU mode to start.
+
+#### checkra1n.service
+
+```
+[Unit]
+Description=checkra1n
+After=network.target
+
+[Service]
+ExecStart=/home/pi/checkra1n -c
+WorkingDirectory=/home/pi
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+```
+
+#### Improvements
+
+Some sort of indicator on the Pi would improve the UX of the device, be it a status LED or even a [small OLED screen](https://thepihut.com/collections/raspberry-pi-screens/products/adafruit-pioled-128x32-monochrome-oled-add-on-for-raspberry-pi-ada3527) with a summary of current checkra1n state.

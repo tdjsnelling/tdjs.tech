@@ -5,7 +5,11 @@
   position: relative;
 
   @media (min-width: $mq--tablet) {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 80px;
   }
 }
 
@@ -16,6 +20,7 @@
   position: relative;
   display: inline-block;
   color: $color--black;
+  width: 100px;
 
   &::after {
     content: '';
@@ -32,8 +37,8 @@
   font-family: $font--gt;
   font-size: 25px;
   line-height: 32px;
-  margin-bottom: $spacing--large;
   color: $color--grey;
+  margin-bottom: 40px;
 
   @media screen and (min-width: 420px) {
     font-size: 4.75vw;
@@ -185,6 +190,14 @@
       }
     }
   }
+}
+
+.PostDate {
+  font-size: 18px;
+  font-family: $font--sourcecode;
+  font-weight: bold;
+  color: $color--grey;
+  margin: 5px 0;
 }
 
 .WorkTogether {

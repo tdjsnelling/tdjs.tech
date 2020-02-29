@@ -40,6 +40,11 @@ class IndexPage extends React.PureComponent {
     const blogItems = data.allMarkdownRemark.edges.filter(x =>
       x.node.fields.slug.includes('/blog/')
     )
+    blogItems.sort((x, y) => {
+      if (x.node.frontmatter.date > y.node.frontmatter.date) return -1
+      else if (x.node.frontmatter.date < y.node.frontmatter.date) return 1
+      else return 0
+    })
 
     return (
       <Layout location={location} light>
@@ -70,7 +75,6 @@ class IndexPage extends React.PureComponent {
                 <span className={styles.Line}>UK.</span>
               </h1>
             )}
-            <p className={styles.Date}>&copy; {new Date().getFullYear()}</p>
           </div>
           <h2 className={styles.ListTitle} id="portfolio">
             Portfolio
@@ -102,6 +106,7 @@ class IndexPage extends React.PureComponent {
           <ul className={styles.ItemLinks}>
             {blogItems.map((item, i) => (
               <li key={i}>
+                <p className={styles.PostDate}>{item.node.frontmatter.date}</p>
                 <Link to={item.node.fields.slug} state={{ fromHome: true }}>
                   {item.node.frontmatter.title}
                 </Link>
@@ -153,6 +158,7 @@ export const query = graphql`
           frontmatter {
             title
             summary
+            date
           }
         }
       }

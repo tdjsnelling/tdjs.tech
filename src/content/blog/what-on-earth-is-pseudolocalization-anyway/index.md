@@ -16,15 +16,21 @@ These are all problems that you want to catch early. In comes pseudolocalization
 
 For example, the string
 
-`This is an English string`
+```
+This is an English string
+```
 
 becomes
 
-`Tλïƨ ïƨ áñ Éñϱℓïƨλ ƨƭřïñϱ`
+```
+Tλïƨ ïƨ áñ Éñϱℓïƨλ ƨƭřïñϱ
+```
 
 You may also wish to enclose strings in opening and closing brackets, so it is easy to spot if they are being clipped or overflowing their bounds
 
-`[!!! Tλïƨ ïƨ áñ Éñϱℓïƨλ ƨƭřïñϱ !!!]`
+```
+[!!! Tλïƨ ïƨ áñ Éñϱℓïƨλ ƨƭřïñϱ !!!]
+```
 
 Below is an example from the Netflix iOS app:
 
@@ -32,7 +38,7 @@ Below is an example from the Netflix iOS app:
 
 A common way to include translated strings in your project is to have a JSON file containing all of your translations, for example:
 
-```json
+```
 {
   "en": {
     "welcomeMessage": "Welcome to my new application!",
