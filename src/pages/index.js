@@ -139,7 +139,7 @@ class IndexPage extends React.PureComponent {
             <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
               pgp public key
             </a>
-            <a rel="me" href="https://mastodon.social/@tdjsnelling" />
+            <a rel="me" href="https://merveilles.town/@tdjs" />
           </p>
         </Content>
       </Layout>
