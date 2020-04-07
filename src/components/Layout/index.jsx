@@ -20,7 +20,10 @@ class Layout extends React.Component {
           <title>Tom Snelling — Full-stack web developer</title>
           <meta name="author" content="Tom Snelling" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta property="og:title" content="Tom Snelling — Full-stack web developer" />
+          <meta
+            property="og:title"
+            content="Tom Snelling — Full-stack web developer"
+          />
           <meta
             name="description"
             content="Full-stack web developer from the UK. Computer science at Loughborough University."
@@ -37,7 +40,7 @@ class Layout extends React.Component {
           <meta name="twitter:site" content="Tom Snelling" />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Sen:400,700"
           />
         </Helmet>
         {children}

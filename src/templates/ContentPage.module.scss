@@ -11,13 +11,10 @@
 }
 
 .HomeLink {
-  color: $color--black;
+  color: $color--primary;
   text-decoration: none;
+  font-family: $font--gt;
   font-weight: bold;
-  background-image: linear-gradient($color--primary, $color--primary);
-  background-size: 100% 30%;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
 }
 
 .Date {

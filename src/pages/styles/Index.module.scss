@@ -6,9 +6,6 @@
 
   @media (min-width: $mq--tablet) {
     height: calc(100vh - 160px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin-bottom: 80px;
   }
 }
@@ -33,130 +30,153 @@
   }
 }
 
-.Heading {
+.Wave {
+  font-size: 64px;
+  line-height: 82px;
+  margin-bottom: 40px;
+}
+
+.Hello {
   font-family: $font--gt;
-  font-size: 25px;
-  line-height: 32px;
-  color: $color--grey;
+  font-size: 32px;
+  line-height: 42px;
   margin-bottom: 40px;
 
-  @media screen and (min-width: 420px) {
-    font-size: 4.75vw;
-    line-height: calc(4.75vw + 1.2vw);
+  @media screen and (min-width: 700px) {
+    font-size: 4.3vw;
+    line-height: calc(4.3vw + 1.05vw);
   }
 
   @media screen and (min-width: 1400px) {
-    font-size: 70px;
-    line-height: 86px;
+    font-size: 64px;
+    line-height: 90px;
   }
 
   .Name {
-    color: $color--black;
     background-image: linear-gradient($color--primary, $color--primary);
     background-size: 100% 25%;
     background-position: 0 100%;
     background-repeat: no-repeat;
   }
+}
 
-  .Line {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin: 0 0 5px;
-    white-space: nowrap;
+.Bio {
+  font-size: 22px;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: $color--white--full;
-      animation: revealBefore 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-      transform: translateX(0);
-    }
+  > * + * {
+    margin-top: 20px;
+  }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: $color--black;
-      animation: revealAfter 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-      transform: translateX(-101%);
-    }
-
-    @for $i from 1 through 5 {
-      &:nth-of-type(#{$i}) {
-        &::before,
-        &::after {
-          animation-delay: $i * 0.4s;
-        }
-      }
-    }
+  span,
+  a {
+    color: $color--primary;
+    font-weight: bold;
   }
 }
 
-@keyframes revealBefore {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(200%);
-  }
-}
+// .Heading {
+//   font-family: $font--gt;
+//   font-size: 32px;
+//   line-height: 42px;
+//   margin-bottom: 40px;
 
-@keyframes revealAfter {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(101%);
-  }
-}
+//   @media screen and (min-width: 520px) {
+//     font-size: 4.3vw;
+//     line-height: calc(4.3vw + 1.05vw);
+//   }
 
-.Date {
-  font-family: $font--gt;
-  font-size: 18px;
-  position: absolute;
-  bottom: $spacing--large;
-  right: 0;
-  opacity: 0;
-  animation: fadeInLeft 250ms forwards;
-  animation-delay: 3s;
-  color: $color--black;
+//   @media screen and (min-width: 1400px) {
+//     font-size: 60px;
+//     line-height: 74px;
+//   }
+
+//   .Name {
+//     color: $color--black;
+//     background-image: linear-gradient($color--primary, $color--primary);
+//     background-size: 100% 25%;
+//     background-position: 0 100%;
+//     background-repeat: no-repeat;
+//   }
+
+//   .Line {
+//     position: relative;
+//     overflow: hidden;
+//     display: block;
+//     margin: 0 0 5px;
+//     white-space: nowrap;
+
+//     &::before {
+//       content: '';
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       width: 100%;
+//       height: 100%;
+//       background: $color--white--full;
+//       animation: revealBefore 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+//       transform: translateX(0);
+//     }
+
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       width: 100%;
+//       height: 100%;
+//       background: $color--black;
+//       animation: revealAfter 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+//       transform: translateX(-101%);
+//     }
+
+//     @for $i from 1 through 5 {
+//       &:nth-of-type(#{$i}) {
+//         &::before,
+//         &::after {
+//           animation-delay: $i * 0.4s;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @keyframes revealBefore {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(200%);
+//   }
+// }
+
+// @keyframes revealAfter {
+//   0% {
+//     transform: translateX(-100%);
+//   }
+//   100% {
+//     transform: translateX(101%);
+//   }
+// }
+
+.ListTitle {
+  color: $color--primary;
+  text-transform: lowercase;
+  display: inline-block;
+  position: relative;
 
   @media (min-width: $mq--tablet) {
-    font-size: 24px;
-    animation-delay: 3s;
+    font-size: 30px;
   }
 
   &::after {
     content: '';
     height: 1px;
-    width: 1000%;
-    background: $color--grey;
+    width: calc(900px - 100%);
+    background: $color--grey--light;
+    display: block;
     position: absolute;
-    left: calc(100% + 10px);
     top: 50%;
-  }
-}
-
-.ListTitle {
-  display: inline-block;
-  color: $color--black;
-  text-transform: lowercase;
-  font-size: 18px;
-  background-image: linear-gradient($color--primary, $color--primary);
-  background-size: 100% 35%;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-
-  @media (min-width: $mq--tablet) {
-    font-size: 30px;
+    left: calc(100% + 20px);
   }
 }
 
@@ -193,25 +213,19 @@
 }
 
 .PostDate {
+  font-family: $font--sen;
   font-size: 18px;
-  font-family: $font--sourcecode;
-  font-weight: bold;
   color: $color--grey;
   margin: 5px 0;
 }
 
 .WorkTogether {
-  font-family: $font--gt;
-  font-size: 18px;
-  color: $color--grey;
-  margin-bottom: 20px;
+  font-size: 22px;
 
-  @media (min-width: $mq--tablet) {
-    font-size: 20px;
-  }
-
+  span,
   a {
-    color: $color--grey;
+    color: $color--primary;
+    font-weight: bold;
   }
 }
 
@@ -219,7 +233,7 @@
   color: $color--grey;
 
   a {
-    color: $color--grey !important;
+    color: $color--primary !important;
   }
 }
 

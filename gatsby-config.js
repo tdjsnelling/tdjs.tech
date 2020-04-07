@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Tom Snelling personal site`,
-    siteUrl: `https://tdjs.tech`
+    title: `Tom Snelling`,
+    siteUrl: `https://tdjs.tech`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -12,22 +12,22 @@ module.exports = {
         name: `tdjs.tech`,
         short_name: `tdjs.tech`,
         start_url: `/`,
-        icon: `static/favicon.png`
-      }
+        icon: `static/favicon.png`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `essays`,
-        path: `${__dirname}/src/content/`
-      }
+        path: `${__dirname}/src/content/`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-87488863-1',
-        head: true
-      }
+        head: true,
+      },
     },
     `gatsby-plugin-sitemap`,
     `gatsby-remark-copy-linked-files`,
@@ -42,21 +42,21 @@ module.exports = {
             options: {
               maxWidth: 1400,
               linkImagesToOriginal: true,
-              backgroundColor: '#fff'
-            }
+              backgroundColor: '#fff',
+            },
           },
           {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
-              rel: 'noopener noreferrer'
-            }
-          }
-        ]
-      }
-    }
+              rel: 'noopener noreferrer',
+            },
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ]
+  ],
 }

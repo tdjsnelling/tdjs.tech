@@ -10,7 +10,7 @@ class IndexPage extends React.PureComponent {
   constructor() {
     super()
     this.state = {
-      isMobile: false
+      isMobile: false,
     }
     this.onBreakpointChange = this.onBreakpointChange.bind(this)
   }
@@ -27,17 +27,16 @@ class IndexPage extends React.PureComponent {
 
   render() {
     const { location, data } = this.props
-    const { isMobile } = this.state
 
-    const portfolioItems = data.allMarkdownRemark.edges.filter(x =>
+    const portfolioItems = data.allMarkdownRemark.edges.filter((x) =>
       x.node.fields.slug.includes('/portfolio/')
     )
 
-    const projectItems = data.allMarkdownRemark.edges.filter(x =>
+    const projectItems = data.allMarkdownRemark.edges.filter((x) =>
       x.node.fields.slug.includes('/projects/')
     )
 
-    const blogItems = data.allMarkdownRemark.edges.filter(x =>
+    const blogItems = data.allMarkdownRemark.edges.filter((x) =>
       x.node.fields.slug.includes('/blog/')
     )
     blogItems.sort((x, y) => {
@@ -50,31 +49,20 @@ class IndexPage extends React.PureComponent {
       <Layout location={location} light>
         <Content>
           <div className={styles.Panel}>
-            <p className={styles.UrlTag}>tdjs.tech</p>
-            {!isMobile ? (
-              <h1 className={styles.Heading}>
-                <span className={styles.Line}>
-                  Hi there! I’m{' '}
-                  <span className={styles.Name}>Tom</span>{' '}
-                </span>
-                <span className={styles.Line}><span className={styles.Name}>Snelling</span>. I am a</span>
-                <span className={styles.Line}>full-stack web</span>
-                <span className={styles.Line}>developer from the</span>
-                <span className={styles.Line}>UK.</span>
-              </h1>
-            ) : (
-              <h1 className={styles.Heading}>
-                <span className={styles.Line}>
-                  Hi there! I’m <span className={styles.Name}>Tom</span>{' '}
-                </span>
-                <span className={styles.Line}>
-                  <span className={styles.Name}>Snelling</span>. I am a
-                </span>
-                <span className={styles.Line}>full-stack web </span>
-                <span className={styles.Line}>developer from the </span>
-                <span className={styles.Line}>UK.</span>
-              </h1>
-            )}
+            <h1 className={styles.Wave}>👋</h1>
+            <h1 className={styles.Hello}>
+              Hi there! I’m <span className={styles.Name}>Tom</span>{' '}
+              <span className={styles.Name}>Snelling</span>. I am a full-stack
+              web developer from the UK.
+            </h1>
+            <div className={styles.Bio}>
+              <p>
+                I work with people like <span>you</span> to create professional,
+                meaningful, and performant online experiences. I love to
+                experiment with technologies like <span>Node</span> and{' '}
+                <span>React</span> to build first-class sites and applications.
+              </p>
+            </div>
           </div>
           <h2 className={styles.ListTitle} id="portfolio">
             Portfolio
@@ -114,14 +102,23 @@ class IndexPage extends React.PureComponent {
             ))}
           </ul>
           <p className={styles.WorkTogether}>
-            Want to work together? Email me at{' '}
+            Want to work together? I’d be delighted! Email me at{' '}
             <a
               href="mailto:hello@tdjs.tech"
               target="_blank"
               rel="noopener noreferrer"
             >
               hello@tdjs.tech
-            </a>. You can check out more work over at{' '}
+            </a>{' '}
+            or message me on Twitter{' '}
+            <OutboundLink
+              href="https://twitter.com/tdjsnelling"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @tdjsnelling
+            </OutboundLink>
+            . You can check out more work over at{' '}
             <OutboundLink
               href="https://github.com/tdjsnelling"
               target="_blank"
