@@ -8,6 +8,10 @@ We produce software relating to current streetwear fashion brands that allow our
 
 We develop and sell successful bots for Supreme New York and Palace Skateboards. With a user base of ~4000 worldwide, we are a trusted and respected provider in the streetwear space.
 
+For the sake of a demo, here is a tutorial video we put together for the original software:
+
+<iframe width="620" height="349" src="https://www.youtube.com/embed/-OXSxzUfh-A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 **Update 2019-03-31**
 
 After a little over 2 years, we have decided to call time on Check Me Out. Building a company from the ground up has been an amazing learning experience, and I have learned skills that I will keep with me forever. However, our interest in the project as lessened over time - we never set out to turn Check Me Out into a business, it was initially only meant to be a tool for us to use personally.
