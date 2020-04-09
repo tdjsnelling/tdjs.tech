@@ -46,11 +46,7 @@
 
   a {
     color: $color--primary;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    font-weight: bold;
   }
 
   code {
@@ -89,6 +85,7 @@
   color: $color--primary;
   display: block;
   overflow-wrap: break-word;
+  font-weight: bold;
 }
 
 :global(#disqus_thread) {

@@ -52,9 +52,8 @@ class IndexPage extends React.PureComponent {
           <div className={styles.Panel}>
             <h1 className={styles.Wave}>👋</h1>
             <h1 className={styles.Hello}>
-              Hi there! I’m <span className={styles.Name}>Tom</span>{' '}
-              <span className={styles.Name}>Snelling</span>. I am a full-stack
-              web developer from the UK.
+              Hi there! I’m <span className={styles.Name}>Tom Snelling</span>. I
+              am a full-stack web developer from the UK.
             </h1>
             <div className={styles.Bio}>
               <p>
@@ -120,7 +119,10 @@ class IndexPage extends React.PureComponent {
             >
               @tdjsnelling
             </OutboundLink>
-            . You can check out more work over at{' '}
+            .
+          </p>
+          <p className={styles.WorkTogether}>
+            You can check out more work over at{' '}
             <OutboundLink
               href="https://github.com/tdjsnelling"
               target="_blank"

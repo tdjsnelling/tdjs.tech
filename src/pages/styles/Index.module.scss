@@ -163,6 +163,7 @@
   text-transform: lowercase;
   display: inline-block;
   position: relative;
+  font-size: 22px;
 
   @media (min-width: $mq--tablet) {
     font-size: 30px;
@@ -187,7 +188,7 @@
 
   li {
     font-family: $font--gt;
-    font-size: 20px;
+    font-size: 22px;
     padding: 7.5px 0;
 
     @media (min-width: $mq--tablet) {
