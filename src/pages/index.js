@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
+import Divider from '../components/Divider'
 
 import styles from './styles/Index.module.scss'
 
@@ -101,6 +102,7 @@ class IndexPage extends React.PureComponent {
               </li>
             ))}
           </ul>
+          <Divider />
           <p className={styles.WorkTogether}>
             Want to work together? I’d be delighted! Email me at{' '}
             <a

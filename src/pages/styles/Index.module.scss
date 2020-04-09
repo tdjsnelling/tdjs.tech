@@ -170,13 +170,14 @@
 
   &::after {
     content: '';
-    height: 1px;
+    background-image: url("data:image/svg+xml,<svg width='10' height='20' viewBox='0 0 10 15' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0.567383' y='14.1777' width='16' height='1' transform='rotate(-60 0.567383 14.1777)' fill='%236a6666'/></svg>");
+    height: 20px;
     width: calc(900px - 100%);
-    background: $color--grey--light;
     display: block;
     position: absolute;
     top: 50%;
     left: calc(100% + 20px);
+    transform: translateY(-40%);
   }
 }
 
@@ -234,39 +235,5 @@
 
   a {
     color: $color--primary !important;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  10%,
-  20% {
-    transform: translateY(0);
-  }
-  5%,
-  15% {
-    transform: translateY(20px);
   }
 }

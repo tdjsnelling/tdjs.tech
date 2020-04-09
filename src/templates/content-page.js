@@ -5,6 +5,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
+import Divider from '../components/Divider'
 
 import styles from './ContentPage.module.scss'
 
@@ -12,7 +13,7 @@ class ContentPage extends React.PureComponent {
   constructor() {
     super()
     this.state = {
-      scrollPercentage: 0
+      scrollPercentage: 0,
     }
     this.getScrollPercentage = this.getScrollPercentage.bind(this)
   }
@@ -26,7 +27,13 @@ class ContentPage extends React.PureComponent {
   }
 
   getScrollPercentage() {
-    this.setState({ scrollPercentage: ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100) })
+    this.setState({
+      scrollPercentage:
+        ((document.documentElement.scrollTop + document.body.scrollTop) /
+          (document.documentElement.scrollHeight -
+            document.documentElement.clientHeight)) *
+        100,
+    })
   }
 
   render() {
@@ -49,16 +56,23 @@ class ContentPage extends React.PureComponent {
             content={content.frontmatter.summary}
           />
         </Helmet>
-        <div className={styles.ScrollIndicator} style={{ width: `${this.state.scrollPercentage}%` }} />
+        <div
+          className={styles.ScrollIndicator}
+          style={{ width: `${this.state.scrollPercentage}%` }}
+        />
         <Content narrow>
-          <Link to="/" className={styles.HomeLink}>tdjs.tech</Link>
+          <Link to="/" className={styles.HomeLink}>
+            tdjs.tech
+          </Link>
           <h1 className={styles.Title}>{content.frontmatter.title}</h1>
           {isBlog && <p className={styles.Date}>{content.frontmatter.date}</p>}
           <p className={styles.Summary}>{content.frontmatter.summary}</p>
+          <Divider />
           <div
             className={styles.Body}
             dangerouslySetInnerHTML={{ __html: content.html }}
           />
+          <Divider />
           {!!content.frontmatter.link && (
             <OutboundLink
               href={content.frontmatter.link}
