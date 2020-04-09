@@ -5,8 +5,28 @@ import classnames from 'classnames'
 import styles from './Layout.module.scss'
 
 class Layout extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      prefersDark: false,
+    }
+  }
+
+  componentDidMount() {
+    const match = window.matchMedia('(prefers-color-scheme:dark)')
+    const detectTheme = () => {
+      console.log(match)
+      if (match.matches) {
+        this.setState({ prefersDark: true })
+      }
+    }
+    match.addListener(detectTheme)
+    detectTheme()
+  }
+
   render() {
     const { children, location, light, transition } = this.props
+    const { prefersDark } = this.state
     return (
       <div
         className={classnames(
@@ -38,6 +58,21 @@ class Layout extends React.Component {
           <meta property="og:image" content={location.origin + '/meta.png'} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="Tom Snelling" />
+          {prefersDark ? (
+            <link
+              rel="icon"
+              media="(prefers-color-scheme:dark)"
+              href="favicon-light.png?v=1"
+              type="image/png"
+            />
+          ) : (
+            <link
+              rel="icon"
+              media="(prefers-color-scheme:light)"
+              href="favicon.png?v=1"
+              type="image/png"
+            />
+          )}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Sen:400,700"

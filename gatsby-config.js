@@ -12,7 +12,6 @@ module.exports = {
         name: `tdjs.tech`,
         short_name: `tdjs.tech`,
         start_url: `/`,
-        icon: `static/favicon.png`,
       },
     },
     {
