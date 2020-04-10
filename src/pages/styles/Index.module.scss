@@ -189,6 +189,14 @@
 //   }
 // }
 
+.ContentItems {
+  margin-bottom: 100px;
+
+  @media (min-width: $mq--tablet) {
+    margin-bottom: 160px;
+  }
+}
+
 .ListTitle {
   color: $color--primary;
   text-transform: lowercase;
@@ -215,7 +223,10 @@
 
 .ItemLinks {
   list-style: none;
-  margin-bottom: $spacing--large;
+
+  &:not(:last-of-type) {
+    margin-bottom: $spacing--large;
+  }
 
   li {
     font-family: $font--gt;

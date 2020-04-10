@@ -64,43 +64,47 @@ class IndexPage extends React.PureComponent {
               </p>
             </div>
           </div>
-          <h2 className={styles.ListTitle} id="portfolio">
-            Portfolio
-          </h2>
-          <ul className={styles.ItemLinks}>
-            {portfolioItems.map((item, i) => (
-              <li key={i}>
-                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
-                  {item.node.frontmatter.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <h2 className={styles.ListTitle} id="projects">
-            Open source
-          </h2>
-          <ul className={styles.ItemLinks}>
-            {projectItems.map((item, i) => (
-              <li key={i}>
-                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
-                  {item.node.frontmatter.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <h2 className={styles.ListTitle} id="blog">
-            Blog
-          </h2>
-          <ul className={styles.ItemLinks}>
-            {blogItems.map((item, i) => (
-              <li key={i}>
-                <p className={styles.PostDate}>{item.node.frontmatter.date}</p>
-                <Link to={item.node.fields.slug} state={{ fromHome: true }}>
-                  {item.node.frontmatter.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className={styles.ContentItems}>
+            <h2 className={styles.ListTitle} id="portfolio">
+              Portfolio
+            </h2>
+            <ul className={styles.ItemLinks}>
+              {portfolioItems.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.node.fields.slug} state={{ fromHome: true }}>
+                    {item.node.frontmatter.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h2 className={styles.ListTitle} id="projects">
+              Open source
+            </h2>
+            <ul className={styles.ItemLinks}>
+              {projectItems.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.node.fields.slug} state={{ fromHome: true }}>
+                    {item.node.frontmatter.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h2 className={styles.ListTitle} id="blog">
+              Blog
+            </h2>
+            <ul className={styles.ItemLinks}>
+              {blogItems.map((item, i) => (
+                <li key={i}>
+                  <p className={styles.PostDate}>
+                    {item.node.frontmatter.date}
+                  </p>
+                  <Link to={item.node.fields.slug} state={{ fromHome: true }}>
+                    {item.node.frontmatter.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <Divider />
           <p className={styles.WorkTogether}>
             Want to work together? I’d be delighted! Email me at{' '}
