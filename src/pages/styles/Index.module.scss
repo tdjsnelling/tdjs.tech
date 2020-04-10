@@ -31,9 +31,40 @@
 }
 
 .Wave {
-  font-size: 64px;
-  line-height: 82px;
+  font-size: 32px;
+  line-height: 42px;
   margin-bottom: 40px;
+  display: inline-block;
+  cursor: default;
+
+  &:hover {
+    animation: wave 500ms forwards;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 4.3vw;
+    line-height: calc(4.3vw + 1.05vw);
+  }
+
+  @media screen and (min-width: 1400px) {
+    font-size: 64px;
+    line-height: 90px;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-20deg);
+  }
+  66% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .Hello {
