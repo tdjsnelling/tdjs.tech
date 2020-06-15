@@ -1,14 +1,24 @@
 @import '../../scss/settings.scss';
 
 .Heading {
-  font-size: 48px;
-  color: $color--white;
+  font-size: 32px;
+  color: $color--primary;
   font-family: $font--gt;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 700px) {
+    font-size: 4.3vw;
+    line-height: calc(4.3vw + 1.05vw);
+  }
+
+  @media screen and (min-width: 1400px) {
+    font-size: 64px;
+    line-height: 90px;
+  }
 }
 
 .Text {
   a {
-    color: $color--white;
+    color: $color--black;
   }
 }

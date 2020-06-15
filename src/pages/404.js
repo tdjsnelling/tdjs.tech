@@ -9,7 +9,7 @@ class NotFoundPage extends React.PureComponent {
   render() {
     const { location } = this.props
     return (
-      <Layout location={location}>
+      <Layout location={location} light>
         <Content>
           <h1 className={styles.Heading}>Error 404</h1>
           <p className={styles.Text}>
