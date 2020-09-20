@@ -79,3 +79,5 @@ typings/
 
 # Gatsby public folder
 public/
+
+.idea/

@@ -4,7 +4,7 @@ summary: 'The flagship CMO product. A highly performant and configurable Supreme
 link: 'https://github.com/tdjsnelling/checkmeout-desktop'
 ---
 
-Built as a part of [Check Me Out](/experience/check-me-out), the Desktop bot is an advanced Supreme bot. It is built with Electron, a node.js framework for building desktop applications.
+Built as a part of [Check Me Out](/portfolio/check-me-out), the Desktop bot is an advanced Supreme bot. It is built with Electron, a node.js framework for building desktop applications.
 
 ![Check Me Out Desktop screenshot](./checkmeout-desktop.jpg)
 

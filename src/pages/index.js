@@ -65,18 +65,6 @@ class IndexPage extends React.PureComponent {
             </div>
           </div>
           <div className={styles.ContentItems}>
-            <h2 className={styles.ListTitle} id="portfolio">
-              Portfolio
-            </h2>
-            <ul className={styles.ItemLinks}>
-              {portfolioItems.map((item, i) => (
-                <li key={i}>
-                  <Link to={item.node.fields.slug} state={{ fromHome: true }}>
-                    {item.node.frontmatter.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
             <h2 className={styles.ListTitle} id="projects">
               Open source
             </h2>
