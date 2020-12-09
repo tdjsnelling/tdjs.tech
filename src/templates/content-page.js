@@ -2,7 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 import Divider from '../components/Divider'
@@ -82,12 +81,6 @@ class ContentPage extends React.PureComponent {
             >
               {content.frontmatter.link} &rarr;
             </OutboundLink>
-          )}
-          {isBlog && (
-            <DiscussionEmbed
-              shortname="tdjs-tech"
-              config={{ url: location.href, title: content.frontmatter.title }}
-            />
           )}
         </Content>
       </Layout>

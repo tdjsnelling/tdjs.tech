@@ -56,11 +56,11 @@
   0% {
     transform: rotate(0deg);
   }
-  33% {
-    transform: rotate(-20deg);
-  }
-  66% {
+  20%, 60% {
     transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-20deg);
   }
   100% {
     transform: rotate(0deg);
@@ -80,7 +80,7 @@
 
   @media screen and (min-width: 1400px) {
     font-size: 64px;
-    line-height: 90px;
+    line-height: 85px;
   }
 
   .Name {
@@ -93,6 +93,7 @@
 
 .Bio {
   font-size: 22px;
+  color: $color--grey--dark;
 
   > * + * {
     margin-top: 20px;
