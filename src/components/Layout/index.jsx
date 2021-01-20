@@ -37,20 +37,20 @@ class Layout extends React.Component {
       >
         <Helmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
-          <title>Tom Snelling — Full-stack web developer</title>
+          <title>Tom Snelling</title>
           <meta name="author" content="Tom Snelling" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             property="og:title"
-            content="Tom Snelling — Full-stack web developer"
+            content="Tom Snelling"
           />
           <meta
             name="description"
-            content="Full-stack web developer from the UK. Computer science at Loughborough University."
+            content="Full-stack web developer from the UK."
           />
           <meta
             property="og:description"
-            content="Full-stack web developer from the UK. Computer science at Loughborough University."
+            content="Full-stack web developer from the UK."
           />
           <meta property="og:site_name" content="Tom Snelling" />
           <meta property="og:type" content="website" />
