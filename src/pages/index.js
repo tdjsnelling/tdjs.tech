@@ -33,31 +33,39 @@ const IndexPage = ({ location, data }) => {
     <Layout location={location} light>
       <Content>
         <div className={styles.Panel}>
-          <h1 className={styles.Wave}>👋</h1>
+          <img
+            className={styles.Memoji}
+            src="/me.png"
+            alt="Memoji of Tom Snelling"
+          />
           <h1 className={styles.Hello}>
-              Hi there! I’m <span className={styles.Name}>Tom Snelling</span>. I
-              am a full-stack web developer from the UK.
+            Hi there! I’m <span className={styles.Name}>Tom Snelling</span>. I
+            am a full-stack web developer from the UK.
           </h1>
           <div className={styles.Bio}>
             <p>
-                I work with people like <span>you</span> to create professional,
-                meaningful, and performant online experiences. I love to
-                experiment with technologies like <span>Node</span> and{' '}
+              I work with people like <span>you</span> to create professional,
+              meaningful, and performant online experiences. I love to
+              experiment with technologies like <span>Node</span> and{' '}
               <span>React</span> to build first-class sites and applications.
             </p>
-            <p>Currently making great things happen at <a href="https://northflank.com" target="_blank">Northflank</a>.</p>
+            <p>
+              Currently making great things happen at{' '}
+              <a href="https://northflank.com" target="_blank">
+                Northflank
+              </a>
+              .
+            </p>
           </div>
         </div>
         <div className={styles.ContentItems}>
           <h2 className={styles.ListTitle} id="blog">
-              Blog
+            Blog
           </h2>
           <ul className={styles.ItemLinks}>
             {blogItems.map((item, i) => (
               <li key={i}>
-                <p className={styles.PostDate}>
-                  {item.node.frontmatter.date}
-                </p>
+                <p className={styles.PostDate}>{item.node.frontmatter.date}</p>
                 <Link to={item.node.fields.slug} state={{ fromHome: true }}>
                   {item.node.frontmatter.title}
                 </Link>
@@ -81,52 +89,57 @@ const IndexPage = ({ location, data }) => {
         {lastFM.status === 'playing' && (
           <div className={styles.NowListening}>
             <div className={styles.Record}>
-              <img src={lastFM.song.art} alt={`Cover art for ${lastFM.song.name} by ${lastFM.song.artist}`} />
+              <img
+                src={lastFM.song.art}
+                alt={`Cover art for ${lastFM.song.name} by ${lastFM.song.artist}`}
+              />
             </div>
             <div>
               <p>now listening</p>
-              <p>{lastFM.song.artist} &mdash; {lastFM.song.name}</p>
+              <p>
+                {lastFM.song.artist} &mdash; {lastFM.song.name}
+              </p>
               <p>{lastFM.song.album}</p>
             </div>
           </div>
         )}
         <p className={styles.WorkTogether}>
-            Want to get in touch? You can email me at{' '}
+          Want to get in touch? You can email me at{' '}
           <a
             href="mailto:hello@tdjs.tech"
             target="_blank"
             rel="noopener noreferrer"
           >
-              hello@tdjs.tech
+            hello@tdjs.tech
           </a>{' '}
-            or message me via Twitter at{' '}
+          or message me via Twitter at{' '}
           <OutboundLink
             href="https://twitter.com/tdjsnelling"
             target="_blank"
             rel="noopener noreferrer"
           >
-              @tdjsnelling
+            @tdjsnelling
           </OutboundLink>
-            .
+          .
         </p>
         <p className={styles.WorkTogether}>
-            You can also check out more work over at{' '}
+          You can also check out more work over at{' '}
           <OutboundLink
             href="https://github.com/tdjsnelling"
             target="_blank"
             rel="noopener noreferrer"
           >
-              GitHub
+            GitHub
           </OutboundLink>
-            .
+          .
         </p>
         <p className={styles.Footer}>
           <a href="/keybase.txt" target="_blank" rel="noopener noreferrer">
-              keybase proof
+            keybase proof
           </a>
-            &nbsp;&bull;&nbsp;
+          &nbsp;&bull;&nbsp;
           <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
-              pgp public key
+            pgp public key
           </a>
           <a rel="me" href="https://merveilles.town/@tdjs" />
         </p>

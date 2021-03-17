@@ -67,6 +67,12 @@
   }
 }
 
+.Memoji {
+  width: 140px;
+  margin-bottom: 20px;
+  -webkit-user-drag: none;
+}
+
 .Hello {
   font-family: $font--gt;
   font-size: 32px;

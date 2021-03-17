@@ -40,10 +40,7 @@ class Layout extends React.Component {
           <title>Tom Snelling</title>
           <meta name="author" content="Tom Snelling" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta
-            property="og:title"
-            content="Tom Snelling"
-          />
+          <meta property="og:title" content="Tom Snelling" />
           <meta
             name="description"
             content="Full-stack web developer from the UK."
@@ -55,9 +52,10 @@ class Layout extends React.Component {
           <meta property="og:site_name" content="Tom Snelling" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={location.href} />
-          <meta property="og:image" content={location.origin + '/meta.png'} />
+          <meta property="og:image" content="https://tdjs.tech/meta.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="Tom Snelling" />
+          <meta name="twitter:site" content="@tdjsnelling" />
+          <meta name="twitter:creator" content="@tdjsnelling" />
           {prefersDark ? (
             <link
               rel="icon"
