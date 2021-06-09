@@ -50,7 +50,7 @@ const IndexPage = ({ location, data }) => {
               <span>React</span> to build first-class sites and applications.
             </p>
             <p>
-              Currently making great things happen at{' '}
+              Currently building stuff at{' '}
               <a href="https://northflank.com" target="_blank">
                 Northflank
               </a>
@@ -97,9 +97,9 @@ const IndexPage = ({ location, data }) => {
             <div>
               <p>now listening</p>
               <p>
-                {lastFM.song.artist} &mdash; {lastFM.song.name}
+                {lastFM.song.name}
               </p>
-              <p>{lastFM.song.album}</p>
+              <p>{lastFM.song.artist} &mdash; {lastFM.song.album}</p>
             </div>
           </div>
         )}
@@ -134,10 +134,6 @@ const IndexPage = ({ location, data }) => {
           .
         </p>
         <p className={styles.Footer}>
-          <a href="/keybase.txt" target="_blank" rel="noopener noreferrer">
-            keybase proof
-          </a>
-          &nbsp;&bull;&nbsp;
           <a href="/key.asc.txt" target="_blank" rel="noopener noreferrer">
             pgp public key
           </a>

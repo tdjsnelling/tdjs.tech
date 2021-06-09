@@ -299,16 +299,27 @@
 
 .NowListening {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   background-color: $color--grey--lightest;
   padding: 10px;
   margin-bottom: 40px;
 
+  @media (min-width: $mq--tablet) {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .Record {
     position: relative;
-    margin-right: 10px;
+    margin-bottom: 10px;
     width: 80px;
     height: 80px;
+
+    @media (min-width: $mq--tablet) {
+      margin-bottom: 0px;
+      margin-right: 10px;
+    }
 
     img {
       width: 80px;

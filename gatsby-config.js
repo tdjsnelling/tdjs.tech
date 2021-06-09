@@ -12,6 +12,13 @@ module.exports = {
         name: `tdjs.tech`,
         short_name: `tdjs.tech`,
         start_url: `/`,
+        icons: [
+          {
+            src: `/favicon.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ]
       },
     },
     {
