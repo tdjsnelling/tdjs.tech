@@ -38,7 +38,7 @@ Below is an example from the Netflix iOS app:
 
 A common way to include translated strings in your project is to have a JSON file containing all of your translations, for example:
 
-```
+```json
 {
   "en": {
     "welcomeMessage": "Welcome to my new application!",
