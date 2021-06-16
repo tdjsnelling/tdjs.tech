@@ -18,7 +18,7 @@ module.exports = {
             sizes: `512x512`,
             type: `image/png`,
           },
-        ]
+        ],
       },
     },
     {
@@ -56,6 +56,12 @@ module.exports = {
             options: {
               target: '_blank',
               rel: 'noopener noreferrer',
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
             },
           },
         ],
